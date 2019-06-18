@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Checkout</title>
+    <meta name="interkassa-verification" content="e4299e18b7a23f7d7483c94b14786e9b" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="./dist/css/checkout.css" type="text/css" rel="stylesheet"  />
+    <link href="./src/css/select2.min.css" rel="stylesheet" />
+    <meta property="og:description" />
+    <meta property="og:title" content="Checkout" />
+    <meta property="og:url" content="http://localhost:55158/ru/cart/checkout" />
+    <meta name="description" />
+    <meta name="keywords" />
+    <meta name="yandex-verification" content="779c595572600758" />
+    <meta name="robots" content="noindex, nofollow" />
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script type="text/javascript">
+    ! function(t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = "https://script.softcube.com/" + n + "/sc.js";
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r)
+    }(window, document, 'script', "8D3869CCAD114060A3641CD1EB48C028");
+
+    </script>
+    <link rel="alternate" hreflang="uk-UA" href="/uk/cart/checkout" />
+    <script>
+    var IsAuthenticated = false;
+    var lang = "ru";
+    </script>
+
+    <script src="./scripts/lib.checkout.js?v2"></script>
+    <script>
+    //load only on desctip version
+    if (true) /*(window.innerWidth > 768)*/ {
+        $(function() {
+            var widget_id = 'L62OB92gvh';
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//code.jivosite.com/script/widget/' + widget_id;
+            var ss = document.getElementsByTagName('script')[0];
+            ss.parentNode.insertBefore(s, ss);
+        })
+    }
+    </script>
+    <!-- Google Tag Manager -->
+    <script async>
+    var userID = '';
+
+    dataLayer = [{
+        'siteVersion': 'new',
+        'pageType': 'checkout',
+        'userAuth': '0'
+    }];
+
+    if (userID != '')
+        dataLayer.push({ userID: userID });
+    </script>
+    <script async>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M46JXM');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+ 
+    <!-- End Google Tag Manager -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://www.foxtrot.com.ua",
+        "logo": "http://www.foxtrot.com.ua/content/Images/svg/logo.svg"
+    }
+    </script>
+    <div class="mask"></div>
+    <header class="header">
+        <div class="header__row">
+            <div class="header__logo"><a href="/"><img src="./src/img/header/logo.svg"></a></div>
+        </div>
+    </header>
+    <div class="check-out container">
+        <input type="hidden" id="SelectedCityName" />
+        <input type="hidden" id="SelectedCityID" />
+        <input type="hidden" id="SelectedStoreID" />
+        <h2>Оформление заказа</h2>
+        <div class="check-out__block clearfix">
+            <div class="check-out__form" data-total="">
+                <form action="/ru/cart/createorder" method="post" id="Checkout-form">
+                    <input name="__RequestVerificationToken" type="hidden" value="pMd_ULcY2CghMQTf-0Mp3RK39hlXXlpU2Hz_kU5bedIZmKn2GSewjEEyPwmblCZZ-FtEnSa3cGo57z5Sni1f26h1yxE1" />
+                    <input data-val="true" data-val-number="The field SPBonuses must be a number." id="SPBonuses" name="SPBonuses" type="hidden" value="" />
+                    <input data-val="true" data-val-required="Требуется поле UseEmployeeDiscount." id="UseEmployeeDiscount" name="UseEmployeeDiscount" type="hidden" value="" />
+                    <div class="check-out__form_titel step1">
+                        <span class="way-number">1</span>
+                        <span class="way-titel">Контактные данные</span>
+                        <span class="way-user" style="display:none"></span>
+                        <a class="way-red" href="#" style="display:none">Редактировать </a>
+                    </div>
+                    <div class="check-out__form_way personal-data open">
+                        <div class="check-out__form_way_contact">
+                            <a class="contact js-news-client" href="#" style="cursor:default">Я новый покупатель</a>
+                            <a class="contact active js-regular-client" href="#">Я постоянный клиент</a>
+                        </div>
+                        <div class="check-out__form_way_news-cklient news-user open">
+                            <div class="check-out__form_row">
+                                <label for="Name">Имя*</label>
+                                <input Autocomplete="off" Value="" class="text-box single-line" data-val="true" data-val-required="Укажите имя" id="Name" name="Name" placeholder="Как вас зовут?" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="check-out__form_row">
+                                <label for="LastName">Фамилия*</label>
+                                <input Autocomplete="off" Value="" class="text-box single-line" data-val="true" data-val-required="Укажите фамилию" id="LastName" name="LastName" placeholder="Какая у вас фамилия?" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="check-out__form_row">
+                                <label for="Phone">Телефон*</label>
+                                <input Autocomplete="off" Value="" class="callback-number text-box single-line" data-val="true" data-val-regex="Вы ввели некорректный номер" data-val-regex-pattern="^\+38\(0\d{2}\)\s\d{3}\s\d{2}\s\d{2}$" data-val-required="Укажите телефон" id="Phone" name="Phone" placeholder="+38(0XX) XXX XX XX" type="tel" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="check-out__form_row">
+                                <label for="Email">Email*</label>
+                                <input Autocomplete="off" Value="" class="text-box single-line" data-val="true" data-val-regex="Вы ввели некорректный Email" data-val-regex-pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" data-val-required="Укажите Email" id="Email" name="Email" placeholder="example@gmail.com" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="check-out__form_row">
+                                <label for="CityID">Город*</label>
+                                <select data-val="true" data-val-number="The field Город* must be a number." data-val-required="Укажите город" id="CityID" name="CityID" placeholder="В какой город отправить Ваш заказ?">
+                                    <option value="38470524">Микуличин, Ив.-Франковская обл.</option>
+                                    <option value="38044">Киев, Киевская обл.</option>
+                                    <option value="38324230">Полигон, Жовтневый р-н, Николаевская обл.</option>
+                                    <option value="38032">Львов, Львовская обл.</option>
+                                </select>
+                                <span class="field-validation-valid" data-valmsg-for="CityID" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="check-out__form_row another-city" style="display:none">
+                                <label for="OtherCity">Другой город</label>
+                                <input class="text-box single-line" id="OtherCity" name="OtherCity" placeholder="Введите название Вашего города" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="OtherCity" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="check-out__form_checbox">
+                                <div class="input-checbox1">
+                                    <input class="styled-checkbox1" id="PersonalDataAgreement" name="PersonalDataAgreement" type="checkbox" value="true" required="">
+                                    <label class="clearfix" for="PersonalDataAgreement"><span>Предоставляя свои персональные данные <a href="./dist/personalData.pdf" target="_blank">даю согласие на их обработку</a></span></label>
+                                </div>
+                            </div>
+                            <div class="check-out__form_row button">
+                                <button class="btn step1-next" disabled>Далее</button>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="check-out__form_titel step2 disabled">
+                        <span class="way-number">2</span>
+                        <span class="way-titel show1">Выберите способ оплаты и доставки</span>
+                    </div>
+                </form>
+            </div>
+            <div class="check-out__product js-open-pr" id="order-list">
+                <script type="text/javascript">
+                var google_tag_params = {
+                    dynx_itemid: ["6275980", "6284866", "6337781"],
+                    dynx_itemid2: ["standart", "standart", "standart"],
+                    dynx_pagetype: "conversionintent",
+                    dynx_totalvalue: [2699, 9699, 11999]
+                };
+                </script>
+                <div class="check-out__product_item">
+                    <div class="check-out__product_item_product">
+                        <p class="bold">Ваши товары</p>
+                    </div>
+                </div>
+                <div class="check-out__product_item">
+                    <div class="check-out__product_item_otstup">
+                        <div class="check-out__product_item_action">
+                            <span class="check-out__product_item_action_red">Акционное предложение:</span>
+                            <span class="check-out__product_item_action_text"> Комплект</span>
+                        </div>
+                        <div class="check-out__product_item_block" data-gid="6416331" data-secondprod="6452866" data-price="8520">
+                            <div class="check-out__product_item_closed"></div>
+                            <div class="check-out__product_item_block_img"><img src="https://i1.foxtrot.com.ua/product/thumb/6416331.jpg"></div>
+                            <div class="check-out__product_item_block_text">
+                                <span class="product-titel"><a href="/ru/shop/noutbuki_acer_aspire-1-a111-31-c42x-nx-gw2eu-007.html">Ноутбук ACER Aspire 1 A111-31-C42X (NX.GW2EU.007)</a></span>
+                            </div>
+                        </div>
+                        <div class="check-out__product_item_block">
+                            <div class="check-out__product_item_block_img"><img src="https://i1.foxtrot.com.ua/product/thumb/6452866.jpg"></div>
+                            <div class="check-out__product_item_block_text">
+                                <span class="product-titel"><a href="/ru/shop/kovriki_dlya_myshki_acer_predator-xxl-size-forest-battle-np-msp11-00b.html">Коврик ACER PREDATOR XXL SIZE FOREST BATTLE (NP.MSP11.00B)</a></span>
+                                <span class="product-price">
+                                    <span class="product-price-number">8520 грн</span>
+                                    <span class="product-bonus">
+                                        <i class="icon-bonus"></i>+ 0 грн бонусов
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="check-out__product_item">
+                    <div class="check-out__product_item_otstup">
+                        <div class="check-out__product_item_block" data-gid="6275980" data-price="2699" data-qty="1">
+                            <div class="check-out__product_item_closed"></div>
+                            <div class="check-out__product_item_block_img">
+                                <img src="https://i1.foxtrot.com.ua/product/thumb/6275980.jpg">
+                            </div>
+                            <div class="check-out__product_item_block_text">
+                                <span class="product-titel"><a href="/ru/shop/mobilnye_telefony_samsung_sm-j320h-galaxy-j3-duos-zdd-gold.html">Смартфон SAMSUNG Galaxy J3 2016 1.5/8Gb Duos Gold (SM-J320HZDDSEK)</a></span>
+                                <div class="check-out__price_block">
+                                    <div class="check-out__product_item_amount">
+                                        <span class="amount__minus">-</span>
+                                        <span class="amount__number">1</span>
+                                        <span class="amount__plus">+</span>
+                                    </div>
+                                    <div class="checkout__price_wrapper">
+                                        <span class="product-price">
+                                            <span class="product-price-number">2699 грн</span>
+                                            <span class="product-bonus">
+                                                <i class="icon-bonus"></i>+ 26 грн бонусов
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="check-out__product_item_block" data-gid="6284866" data-price="9699" data-qty="1">
+                            <div class="check-out__product_item_closed"></div>
+                            <div class="check-out__product_item_block_img">
+                                <img src="https://i1.foxtrot.com.ua/product/thumb/6284866.jpg">
+                            </div>
+                            <div class="check-out__product_item_block_text">
+                                <span class="product-titel"><a href="/ru/shop/stiralki_lg_fh0b8nd.html">Стиральная машина LG FH0B8ND</a></span>
+                                <div class="check-out__price_block">
+                                    <div class="check-out__product_item_amount">
+                                        <span class="amount__minus">-</span>
+                                        <span class="amount__number">1</span>
+                                        <span class="amount__plus">+</span>
+                                    </div>
+                                    <div class="checkout__price_wrapper">
+                                        <span class="product-oldPrice">11399 грн</span>
+                                        <span class="product-price">
+                                            <span class="product-price-number">9699 грн</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="check-out__product_item_block" data-gid="6337781" data-price="11999" data-qty="1">
+                            <div class="check-out__product_item_closed"></div>
+                            <div class="check-out__product_item_block_img">
+                                <img src="https://i1.foxtrot.com.ua/product/thumb/6337781.jpg">
+                            </div>
+                            <div class="check-out__product_item_block_text">
+                                <span class="product-titel"><a href="/ru/shop/led_televizory_samsung_ue32m5500auxua.html">Телевизор SAMSUNG UE32M5500AUXUA</a></span>
+                                <div class="check-out__price_block">
+                                    <div class="check-out__product_item_amount">
+                                        <span class="amount__minus">-</span>
+                                        <span class="amount__number">1</span>
+                                        <span class="amount__plus">+</span>
+                                    </div>
+                                    <div class="checkout__price_wrapper">
+                                        <span class="product-oldPrice">13999 грн</span>
+                                        <span class="product-price">
+                                            <span class="product-price-number">11999 грн</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="check-out__product_total">
+                    <div class="check-out__product_total_right">
+                        <span class="price-bonus ">Всего: <span class="semibold">36617 грн</span></span>
+                        <span class="price-bonus ">Скидка: <span class="semibold">3700 грн</span></span>
+                        <span class="price-bonus ">Начислено бонусов: <span class="semibold">26 грн</span></span>
+                        <span class="price-bonus bold" id=totalprice data-totalprice=32917 грн>ИТОГО К ОПЛАТЕ: <span class="semibold" style=font-size:20px>32917 грн</span></span>
+                    </div>
+                </div>
+                <div class="check-out__product_code">
+                    <div class="check-out__product_code_bonus apply-bonus">
+                        <span class="text">
+                            <span class="titel js-bonus">Применить бонусы</span>
+                            <span class="code-bonus">
+                                <i class="icon-bonus"></i>У вас есть 0 бонусов
+                            </span>
+                        </span>
+          <!--               <div class="check-out__product_code_input js-bonus_input">
+                            <input type="number" placeholder="Введите сумму бонусов" max="0" id="SPBonusesInput" name="SPBonusesInput" data-maxbonus="0" maxlength="3">
+                            <button class="btn">Применить</button>
+                        </div> -->
+                    </div>
+                    <div class="check-out__product_code_bonus">
+                        <span class="text"><span class="titel js-promotional">Применить промокод</span></span>
+            <!--             <div class="check-out__product_code_input js-promotional_input">
+                            <input type="text" placeholder="Введите промокод">
+                            <button class="btn">Применить</button>
+                        </div> -->
+                    </div>
+                    <div class="check-out__form_row button">
+                        <button class="btn" data-apply-order="Подтвердить заказ" data-go-payment="Перейти к оплате">
+                            Подтвердить заказ
+                        </button>
+                    </div>
+                </div>
+                <script>
+                enablePickupEmployee();
+
+
+
+                function disablePickupEmployee() {
+                    //console.log("begin disablePickupEmployee")
+                    let pickupEmp = $("#DeliveryType option[value='2']");
+
+                    pickupEmp.prop("disabled", true);
+                    pickupEmp.attr("data-employ", 1);
+
+                    if ($("#DeliveryType option:selected").val() == 2) {
+                        $("#DeliveryType option[value]").not("[value='2']").first().prop("selected", true);
+                    }
+
+                    $("#DeliveryType").select2({
+                        language: lang,
+                        placeholder: $("#DeliveryType").attr("placeholder"),
+                        theme: "default search-none"
+                    });
+                }
+
+                function enablePickupEmployee() {
+                    let pickupEmp = $("#DeliveryType option[value='2']");
+
+                    if (pickupEmp.length > 0 && pickupEmp.attr("data-employ") == 1) {
+                        pickupEmp.attr("disabled", false);
+                        pickupEmp.attr("data-employ", 0);
+
+                        $("#DeliveryType").select2({
+                            language: lang,
+                            placeholder: $("#DeliveryType").attr("placeholder"),
+                            theme: "default search-none"
+                        });
+                    }
+                }
+
+
+                $(document).ready(function() {
+                    if (window.innerWidth < 991) {
+                        let bonusBlock = $("#order-list .check-out__product_code").clone();
+                        $(".check-out__form .check-out__product_code").remove();
+                        $("#Checkout-form").after(bonusBlock);
+                        $("#order-list .check-out__product_code_bonus").remove();
+                    }
+
+                    if (0 > 1) {
+                        $("#PaymentID option").each(function() {
+                            if ($(this).val() != 10 && $(this).val() != 1) {
+                                $(this).remove();
+                            }
+                        });
+                        $('.payment-restriction-message').show();
+                        return false;
+                    }
+
+                    $("#UseEmployeeDiscount").val($("#EmployeeCheckbox").prop("checked"));
+                })
+                //fix - disable sction payment types for Employee discount
+                if ($("#EmployeeCheckbox").length > 0) {
+                    let visaAdditionalspan = '<span style="margin-left:10px;color:darkblue;font-weight:600;font-size:13px">+5% ' + (lang == 'ru' ? 'бонусов  + розыгрыш APPLE iPhone X' : 'бонусів  + розіграш APPLE iPhone X') + '</span>';
+
+                    if ($("#EmployeeCheckbox").prop("checked")) {
+                        $.map($("#PaymentID option"), function(item) {
+                            let that = $(item);
+                            let val = +that.val();
+                            if (that.attr("disabled") !== undefined && that.attr("data-employ") === undefined) {
+                                that.attr("data-dis", "true")
+                            }
+                            if ((val === 8 || val === 9 || val === 10 || val === 12) && that.attr("data-employ") === undefined) {
+                                that.attr("data-employ", "true")
+                                that.prop("disabled", true)
+                            }
+                            //console.log(that.attr("disabled"));
+                        })
+                    } else {
+                        $.map($("#PaymentID option"), function(item) {
+                            let that = $(item);
+                            let val = +that.val();
+
+                            if (that.attr("data-employ") !== undefined && that.attr("data-dis") === undefined) {
+                                that.removeAttr("data-employ")
+                                that.prop("disabled", false)
+                            }
+                            //console.log(that.attr("disabled"));
+                        })
+                    }
+
+                    if ($("#PaymentID option:selected").attr("disabled") !== undefined) {
+                        $("#PaymentID option[value]").not(":disabled").first().prop("selected", true);
+                        $("#PaymentID").trigger("change");
+                    }
+
+                    $("#PaymentID").select2({
+                        language: lang,
+                        placeholder: $("#PaymentID").attr("placeholder"),
+                        theme: "default search-none",
+                        escapeMarkup: function(m) {
+                            return m;
+                        }
+                    });
+
+                    function format(option) {
+                        if (!option.id || option.id != 15) { return option.text; }
+                        var o = '<img src="./src/img/general/visa_checkout.png" />';
+                        return o;
+                    };
+                }
+                </script>
+                <style>
+                    /*.check-out__block .check-out__product_item_block {
+                                margin-top: 10px; }*/
+                            /*.check-out__block .check-out__price_block {
+                                display: flex;
+                                align-items: flex-end;
+                                flex-wrap: wrap; }*/
+                            /*.check-out__block .check-out__product_item_amount {
+                                font-size: 14px;
+                                width: 79px;
+                                height: 29px;
+                                border: 1px solid #EF4123;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                margin-right: 10px; }*/
+                            /*.check-out__block .amount__minus, .check-out__block .amount__plus {
+                                cursor: pointer;
+                                width: 20px;
+                                text-align: center; }*/
+
+                           /*@media screen and (max-width: 990px) {
+                                .check-out__block .product-price {
+                                    display: flex;
+                                    flex-direction: column; }
+                                .check-out__block .check-out__price_block {
+                                    align-items: baseline;
+                                    flex-direction: column; }
+                                .check-out__block .check-out__product_item_amount {
+                                    margin-top: 5px;
+                                    width: 98px;
+                                    height: 38px;
+                                    margin-bottom: 5px; } }*/
+</style>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__row">
+            <p>Все права защищены &#171;Фокстрот&#187; Copyright © 2019</p>
+        </div>
+    </footer>
+    <script>
+          $(document).ready(function() {
+        $("select").select2({
+            placeholder: "Выберите город",
+            width: 'resolve'
+        });
+    });
+    //------------------ Criteo basketpage script ---------------------
+    let products = [];
+    $.map($(".check-out__product_item_block"), function(elem, index) {
+        products.push({
+            id: $(elem).data("gid"),
+            price: $(elem).data("price"),
+            quantity: $(elem).data("qty")
+        })
+    })
+    if (products.length > 0) {
+        criteoBasketPage(products);
+    }
+    //------------------------------------------------------------------
+
+    //$(".check-out__product_item_block")
+
+    //$("#order-list").on("click", ".check-out__product_total_left a", function () {
+    //    OpenCart();
+    //    LoadMinicart();
+    //   });
+
+
+
+
+    //открытие попап окна регистрации
+    function invokeLogin() {
+        var chrome = 100;
+        var width = 500;
+        var height = 450;
+        var left = (screen.width - width) / 2;
+        var top = (screen.height - height - chrome) / 2;
+        var options = "status=0,toolbar=0,location=1,resizable=1,scrollbars=1,left=" + left + ",top=" + top + ",width=" + width + ",height=" + height;
+        window.open("about:blank", "login-popup", options);
+    }
+
+    //Redirect по указаной ссылке
+    function loginCallback(success, returnUrl) {
+        if (returnUrl) {
+            window.location.href = returnUrl;
+        } else {
+            $.ajax({
+                url: '/ru/account/loginpartial',
+                success: function(result) {
+                    $('#login').html(result);
+                }
+            });
+        }
+    }
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script> -->
+    <div>
+    </div>
+</body>
+
+  </html>
