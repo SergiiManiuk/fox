@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
@@ -24,7 +24,7 @@ function bsReload() {
 exports.bsReload = bsReload;
 
  function styles() {
-  return gulp.src(['content/scss/checkout/**/*.scss'])
+  return gulp.src(['src/scss/**/*.scss'])
         .pipe(plumber({
           errorHandler: function (error) {
             console.log(error.message);
@@ -32,12 +32,12 @@ exports.bsReload = bsReload;
         }}))
         .pipe(gulpif(!argv.prod,sourcemaps.init({loadMaps: true})))
         .pipe(sass())
-        .pipe(gulpif(argv.prod,autoprefixer({browsers: ['last 200 versions'],cascade: false})))
+        .pipe(gulpif(argv.prod,autoprefixer({cascade: false})))
         .pipe(gulpif(argv.prod,rename({suffix: '.min'})))
-        .pipe(gulpif(argv.prod,minifycss()))
-        .pipe(gulp.dest('content/css/'))
+        .pipe(gulpif(argv.prod,cleanCSS()))
+        .pipe(gulp.dest('dist/css/'))
         .pipe(gulpif(!argv.prod,sourcemaps.write('.')))
-        .pipe(gulp.dest('content/css/'))
+        .pipe(gulp.dest('dist/css/'))
         .pipe(browserSync.reload({stream:true}))
 }
 exports.styles = styles;
@@ -49,12 +49,12 @@ function html() {
 exports.html = html;
 
 function clean() {
-  return del(["./Content/css/"]);
+  return del(["./dist/css/"]);
 }
 exports.clean = clean;
 
 function watchFiles() {
-  gulp.watch("content/scss/checkout/**/*.scss", styles);
+  gulp.watch("src/scss/**/*.scss", styles);
   gulp.watch("./*.html", html);
 }
 

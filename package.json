@@ -9,15 +9,15 @@
   "author": "sergey manyuk",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.5",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-if": "^2.0.2",
-    "gulp-minify-css": "^1.2.4",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "yargs": "^13.2.2",
-    "browser-sync": "^2.26.5"
+    "gulp-clean-css": "^4.2.0"
   },
   "dependencies": {
     "del": "^4.1.1",
