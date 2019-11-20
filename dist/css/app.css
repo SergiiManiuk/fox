@@ -421,12 +421,14 @@ a:hover {
         background: red;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        color: #fff; }
+        color: #fff;
+        display: table; }
         .header .language-list li {
           padding: 1em 0.8em;
           font-size: 1rem;
           text-align: center;
-          font-weight: 600; }
+          font-weight: 600;
+          display: table-cell; }
           .header .language-list li:not(:last-child) {
             border-right: 1px solid #000; } }
   .header .language-selector-label {
