@@ -374,8 +374,8 @@
           height: calc(100vh - 50px);
           flex-direction: column;
           flex-grow: 2;
-          display: grid;
-          flex-grow: 2;
+          // display: grid;
+          // flex-grow: 2;
           grid-template-rows: 1fr auto auto;
         }
     }
