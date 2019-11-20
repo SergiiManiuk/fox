@@ -1,8 +1,0 @@
-.header__row, .check-out.container, .footer__row{
-  max-width: 1500px;
-  margin: 0 auto;
-  @media #{$desktop_large_max} {
-    padding-left: 2%; 
-    padding-right: 2%;
-  }
-}

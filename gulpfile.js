@@ -3,6 +3,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
@@ -24,7 +26,7 @@ function bsReload() {
 exports.bsReload = bsReload;
 
  function styles() {
-  return gulp.src(['src/scss/**/*.scss'])
+  return gulp.src(['src/styles/**/*.scss'])
         .pipe(plumber({
           errorHandler: function (error) {
             console.log(error.message);
@@ -53,13 +55,41 @@ function clean() {
 }
 exports.clean = clean;
 
+
+function scripts() {
+   return gulp.src('src/js/app.js')
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    // .pipe(jshint())
+    // .pipe(jshint.reporter('default'))  
+     // .pipe(babel({
+     //     presets: ['env']
+     // }))
+    .pipe(concat('app.js'))
+    .pipe(gulpif(argv.production, gulp.dest('./dist/js/'))) //prod
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulpif(argv.production, (uglify())))  //prod
+    .pipe(gulp.dest('./dist/js/'))
+    .pipe(browserSync.reload({stream:true})) 
+}
+exports.scripts = scripts;
+
+function clean() {
+  return del(["./dist/"]);
+}
+exports.clean = clean;
 function watchFiles() {
-  gulp.watch("src/scss/**/*.scss", styles);
+  gulp.watch("src/styles/**/*.scss", styles);
+  gulp.watch("src/js/app.js", scripts);
   gulp.watch("./*.html", html);
 }
 
-const build = gulp.series(styles);
+const build = gulp.series(clean, styles, scripts);
 const watch = gulp.parallel(watchFiles, browserTask);
+
 exports.watch = watch;
 exports.build = build;
 exports.default = build;
