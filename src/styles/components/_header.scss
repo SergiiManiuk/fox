@@ -372,8 +372,8 @@
           flex-direction: column;
           flex-grow: 2;
           display: grid;
-            flex-grow: 2;
-            grid-template-rows: 1fr auto auto;
+          flex-grow: 2;
+          grid-template-rows: 1fr 30px 70px;
         }
     }
   }
