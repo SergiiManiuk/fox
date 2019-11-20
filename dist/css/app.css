@@ -386,7 +386,8 @@ a:hover {
     padding: 7px; }
   @media (max-width: 1280px) {
     .header__lang {
-      padding: 20px 0 0 0; } }
+      padding: 20px 0 0 0;
+      display: block; } }
   .header .language-dropdown {
     display: inline-block;
     position: relative; }
@@ -645,7 +646,7 @@ a:hover {
         flex-grow: 2;
         display: grid;
         flex-grow: 2;
-        grid-template-rows: 1fr 30px 70px; } }
+        grid-template-rows: 1fr auto auto; } }
   .stellarnav .menu-toggle {
     display: none;
     width: 22px;

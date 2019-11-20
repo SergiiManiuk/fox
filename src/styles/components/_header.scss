@@ -50,6 +50,7 @@
     }
     @include header_breakpoint(max) {
       padding: 20px 0 0 0;
+      display: block;
     }
   }
   &__search {
@@ -373,7 +374,7 @@
           flex-grow: 2;
           display: grid;
           flex-grow: 2;
-          grid-template-rows: 1fr 30px 70px;
+          grid-template-rows: 1fr auto auto;
         }
     }
   }
