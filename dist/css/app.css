@@ -362,8 +362,7 @@ a:hover {
       .header .header__logo {
         padding: 5px 75px;
         width: 100%;
-        min-height: 50px;
-        z-index: 1; }
+        min-height: 50px; }
         .header .header__logo img {
           max-width: 85%; } }
   .header__feedback, .header__lang, .header__search {
@@ -382,14 +381,22 @@ a:hover {
         padding: 0 15px; } }
   @media (max-width: 1280px) {
     .header__feedback {
-      padding: 2em 1em 2em 2em; } }
+      padding: 20px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 52px; } }
   .header__lang a {
     display: inline-block;
     padding: 7px; }
   @media (max-width: 1280px) {
     .header__lang {
       padding: 0;
-      display: block; } }
+      display: block;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      right: 0; } }
   .header .language-dropdown {
     display: inline-block;
     position: relative; }
@@ -516,6 +523,33 @@ a:hover {
  * Released under the MIT license
  */
 /* all nav */
+.menu-toggle {
+  display: none;
+  width: 22px;
+  height: 22px;
+  position: fixed;
+  left: 16px;
+  top: 11px;
+  transform: translate3d(0, 0, 0); }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after {
+    background-color: #fff;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 5px 0;
+    transition: all 0.2s ease-in-out; }
+  @media (max-width: 1280px) {
+    .menu-toggle {
+      display: inline-block;
+      z-index: 6; } }
+  .menu-toggle.active .menu-toggle span {
+    transform: scale(0); }
+  .menu-toggle.active .menu-toggle::before {
+    transform: translateY(5px) rotate(136deg); }
+  .menu-toggle.active .menu-toggle::after {
+    transform: translateY(-9px) rotate(-135deg); }
+
 .stellarnav {
   position: relative;
   width: 100%;
@@ -593,8 +627,13 @@ a:hover {
         left: 220px; } }
     @media (max-width: 1280px) {
       .stellarnav .navMainWrap {
+        height: calc(100vh - 50px);
+        flex-direction: column;
+        flex-grow: 2;
+        grid-template-rows: 1fr;
+        padding: 0 0 120px 0;
+        top: 50px;
         position: fixed;
-        top: 0;
         left: 0;
         display: block;
         bottom: 0;
@@ -638,46 +677,17 @@ a:hover {
     @media (max-width: 1280px) {
       .stellarnav .nav-main {
         overflow: auto;
-        padding: 50px 0 0 0; } }
+        padding: 10px 0 0 0;
+        display: block; } }
   .stellarnav.active .navMainWrap {
     display: flex; }
     .stellarnav.active .navMainWrap .nav-main {
       display: block; }
-    @media (max-width: 1280px) {
-      .stellarnav.active .navMainWrap {
-        height: 100vh;
-        flex-direction: column;
-        flex-grow: 2;
-        grid-template-rows: 1fr auto auto; } }
-  .stellarnav .menu-toggle {
-    display: none;
-    width: 22px;
-    height: 22px;
-    position: fixed;
-    left: 16px;
-    top: 11px;
-    transform: translate3d(0, 0, 0); }
-    .stellarnav .menu-toggle span, .stellarnav .menu-toggle::before, .stellarnav .menu-toggle::after {
-      background-color: #fff;
-      border-radius: 3px;
-      content: '';
-      display: block;
-      height: 2px;
-      margin: 5px 0;
-      transition: all 0.2s ease-in-out; }
-    @media (max-width: 1280px) {
-      .stellarnav .menu-toggle {
-        display: inline-block;
-        z-index: 2; } }
-  .stellarnav.active .menu-toggle span {
-    transform: scale(0); }
-  .stellarnav.active .menu-toggle::before {
-    transform: translateY(5px) rotate(136deg); }
-  .stellarnav.active .menu-toggle::after {
-    transform: translateY(-9px) rotate(-135deg); }
   @media (max-width: 1280px) {
     .stellarnav {
-      width: auto; } }
+      width: auto;
+      z-index: 6;
+      padding: 1em 0 0 0; } }
   .stellarnav li {
     position: relative;
     list-style: none;
