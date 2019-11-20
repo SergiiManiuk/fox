@@ -214,42 +214,7 @@
 
 /* all nav */
  
-   .menu-toggle {
-    display: none;
-    width: 22px;
-    height: 22px;
-    position: fixed;
-    left: 16px;
-    top: 11px;
-    transform: translate3d(0, 0, 0);
-    span, &::before, &::after {
-      background-color: #fff;
-      border-radius: 3px;
-      content: '';
-      display: block;
-      height: 2px;
-      margin: 5px 0;
-      transition: all 0.2s ease-in-out;
 
-    }
-    @include header_breakpoint(max) {
-      display: inline-block;
-      z-index: 6;
-    }
-    &.active {
-      .menu-toggle {
-        span {
-          transform: scale(0);
-        }
-        &::before {
-          transform: translateY(5px) rotate(136deg);
-        }
-        &::after {
-          transform: translateY(-9px) rotate(-135deg);
-        }
-      }
-    }
-  }
 
 
 .stellarnav {
@@ -430,20 +395,49 @@
       display: block;
     }
   }
+  .menu-toggle {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    position: fixed;
+    left: 16px;
+    top: 11px;
+    transform: translate3d(0, 0, 0);
+    z-index: 6;
+    span, &::before, &::after {
+      background-color: #fff;
+      border-radius: 3px;
+      content: '';
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      transition: all 0.2s ease-in-out;
+    }
+    @include header_breakpoint {
+      display: none;
+    }
+  }
   &.active {
     .navMainWrap {
         display: flex;
        .nav-main {
-        display: block;
-        
+        display: block;        
       }
-      @include header_breakpoint(max) {
-      
-        }
     }
-  }
-
-  
+    @include header_breakpoint(max) {
+      .menu-toggle {
+        span {
+          transform: scale(0);
+        }
+        &::before {
+          transform: translateY(5px) rotate(136deg);
+        }
+        &::after {
+          transform: translateY(-9px) rotate(-135deg);
+        }
+      }    
+    }
+  }  
   @include header_breakpoint(max) {
     width: auto;
     z-index: 6;

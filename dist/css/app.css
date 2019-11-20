@@ -523,33 +523,6 @@ a:hover {
  * Released under the MIT license
  */
 /* all nav */
-.menu-toggle {
-  display: none;
-  width: 22px;
-  height: 22px;
-  position: fixed;
-  left: 16px;
-  top: 11px;
-  transform: translate3d(0, 0, 0); }
-  .menu-toggle span, .menu-toggle::before, .menu-toggle::after {
-    background-color: #fff;
-    border-radius: 3px;
-    content: '';
-    display: block;
-    height: 2px;
-    margin: 5px 0;
-    transition: all 0.2s ease-in-out; }
-  @media (max-width: 1280px) {
-    .menu-toggle {
-      display: inline-block;
-      z-index: 6; } }
-  .menu-toggle.active .menu-toggle span {
-    transform: scale(0); }
-  .menu-toggle.active .menu-toggle::before {
-    transform: translateY(5px) rotate(136deg); }
-  .menu-toggle.active .menu-toggle::after {
-    transform: translateY(-9px) rotate(-135deg); }
-
 .stellarnav {
   position: relative;
   width: 100%;
@@ -686,10 +659,37 @@ a:hover {
         overflow: auto;
         padding: 10px 0 0 0;
         display: block; } }
+  .stellarnav .menu-toggle {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    position: fixed;
+    left: 16px;
+    top: 11px;
+    transform: translate3d(0, 0, 0);
+    z-index: 6; }
+    .stellarnav .menu-toggle span, .stellarnav .menu-toggle::before, .stellarnav .menu-toggle::after {
+      background-color: #fff;
+      border-radius: 3px;
+      content: '';
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      transition: all 0.2s ease-in-out; }
+    @media (min-width: 1280px) {
+      .stellarnav .menu-toggle {
+        display: none; } }
   .stellarnav.active .navMainWrap {
     display: flex; }
     .stellarnav.active .navMainWrap .nav-main {
       display: block; }
+  @media (max-width: 1280px) {
+    .stellarnav.active .menu-toggle span {
+      transform: scale(0); }
+    .stellarnav.active .menu-toggle::before {
+      transform: translateY(5px) rotate(136deg); }
+    .stellarnav.active .menu-toggle::after {
+      transform: translateY(-9px) rotate(-135deg); } }
   @media (max-width: 1280px) {
     .stellarnav {
       width: auto;
