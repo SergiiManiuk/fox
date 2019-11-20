@@ -309,7 +309,7 @@
     }
     @include header_breakpoint(max) {
       position: fixed;
-      top: 50px;
+      top: 0;
       left: 0;
       display: block;
       bottom: 0;
