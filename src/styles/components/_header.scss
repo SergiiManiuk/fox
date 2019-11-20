@@ -12,10 +12,12 @@
     align-items: center;
     justify-content: center;
     padding: 0 30px;
+    position: relative;
     @include header_breakpoint(max) {
       padding: 5px 75px;
       width: 100%;
       min-height: 50px;
+      z-index: 1;
       img {
         max-width: 85%;
       }
@@ -40,7 +42,7 @@
   }
   &__feedback {
     @include header_breakpoint(max) {
-      padding: 0 1em;
+      padding: 2em 1em 2em 2em;
     }
   }
   &__lang {
@@ -207,7 +209,6 @@
 .stellarnav {
   position: relative;
   width: 100%;
-  z-index: 9900;
   line-height: normal;
   .navMainWrap {
     background: #3F3F3F;
@@ -353,7 +354,7 @@
           padding-right: 0.4em;  
         }
         @include header_breakpoint(max) {
-           padding-left: 1em;  
+           padding-left: 2em;  
           padding-right: 1em; 
           white-space: normal;
         }
@@ -361,7 +362,7 @@
     }
     @include header_breakpoint(max) {
       overflow: auto;
-      // padding: 0 0 10px 0;
+      padding: 50px 0 0 0;
     }
   }
   &.active {
@@ -372,7 +373,7 @@
         
       }
       @include header_breakpoint(max) {
-          height: calc(100vh - 55px);
+          height: 100vh;
           flex-direction: column;
           flex-grow: 2;
           // display: grid;
@@ -401,6 +402,7 @@
     }
     @include header_breakpoint(max) {
       display: inline-block;
+      z-index: 2;
     }
   }
   &.active {
