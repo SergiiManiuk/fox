@@ -367,7 +367,6 @@ a:hover {
   .header__feedback, .header__lang, .header__search {
     display: grid;
     align-items: center;
-    padding: 0 15px;
     position: relative;
     white-space: nowrap; }
     .header__feedback a, .header__lang a, .header__search a {
@@ -376,26 +375,30 @@ a:hover {
       color: #d4d4d4; }
       .header__feedback a:hover, .header__lang a:hover, .header__search a:hover {
         text-decoration: none; }
-    @media (max-width: 1280px) {
+    @media (min-width: 1280px) {
       .header__feedback, .header__lang, .header__search {
-        flex-grow: 1; } }
+        padding: 0 15px; } }
+  @media (max-width: 1280px) {
+    .header__feedback {
+      padding: 0 1em; } }
   .header__lang a {
     display: inline-block;
     padding: 7px; }
+  @media (max-width: 1280px) {
+    .header__lang {
+      padding: 20px 0 0 0; } }
   .header .language-dropdown {
     display: inline-block;
     position: relative; }
     .header .language-dropdown:hover .language-list {
       display: block; }
+    @media (max-width: 1280px) {
+      .header .language-dropdown {
+        display: block; } }
   .header .language-list {
-    position: absolute;
     width: 100%;
     background: #fff;
-    left: 0;
-    border-radius: 3px;
-    box-shadow: 0px 0px 0px 1px #c7c7c7 inset;
-    color: #5d5d5d;
-    display: none; }
+    display: block; }
     .header .language-list li {
       cursor: pointer;
       padding: 0.5em 0.8em;
@@ -404,6 +407,27 @@ a:hover {
       .header .language-list li:hover {
         background: rgba(63, 63, 63, 0.5);
         color: #fff; }
+    @media (min-width: 1280px) {
+      .header .language-list {
+        display: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 0px 1px #c7c7c7 inset;
+        position: absolute;
+        left: 0;
+        color: #5d5d5d; } }
+    @media (max-width: 1280px) {
+      .header .language-list {
+        background: red;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        color: #fff; }
+        .header .language-list li {
+          padding: 1em 0.8em;
+          font-size: 1rem;
+          text-align: center;
+          font-weight: 600; }
+          .header .language-list li:not(:last-child) {
+            border-right: 1px solid #000; } }
   .header .language-selector-label {
     position: relative; }
     .header .language-selector-label::after {
@@ -415,6 +439,9 @@ a:hover {
       transform: rotate(45deg);
       vertical-align: middle;
       margin: -4px 0 0 10px; }
+    @media (max-width: 1280px) {
+      .header .language-selector-label {
+        display: none; } }
   .header__search_input {
     background: #fff;
     border-radius: 25px;
@@ -599,15 +626,26 @@ a:hover {
       .stellarnav .nav-main li > a {
         padding-left: 0.4em;
         padding-right: 0.4em; } }
+    @media (max-width: 1280px) {
+      .stellarnav .nav-main li > a {
+        padding-left: 1em;
+        padding-right: 1em; } }
+    @media (max-width: 1280px) {
+      .stellarnav .nav-main {
+        overflow: auto;
+        padding: 0 0 10px 0; } }
   .stellarnav.active .navMainWrap {
-    height: 100vh;
-    display: flex;
-    flex-direction: column; }
+    display: flex; }
     .stellarnav.active .navMainWrap .nav-main {
       display: block; }
-      @media (max-width: 1280px) {
-        .stellarnav.active .navMainWrap .nav-main {
-          flex-grow: 2; } }
+    @media (max-width: 1280px) {
+      .stellarnav.active .navMainWrap {
+        height: calc(100vh - 50px);
+        flex-direction: column;
+        flex-grow: 2;
+        display: grid;
+        flex-grow: 2;
+        grid-template-rows: 1fr auto auto; } }
   .stellarnav .menu-toggle {
     display: none;
     width: 22px;

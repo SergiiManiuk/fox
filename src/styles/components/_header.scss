@@ -24,7 +24,6 @@
   &__feedback, &__lang, &__search {
     display: grid;
     align-items: center;
-    padding: 0 15px;
     position: relative;
     white-space: nowrap;
     a {
@@ -35,8 +34,13 @@
         text-decoration: none;
       }
     }
+    @include header_breakpoint {
+          padding: 0 15px;
+    }
+  }
+  &__feedback {
     @include header_breakpoint(max) {
-      flex-grow: 1;
+      padding: 0 1em;
     }
   }
   &__lang {
@@ -44,6 +48,12 @@
       display: inline-block;
       padding: 7px;
     }
+    @include header_breakpoint(max) {
+      padding: 20px 0 0 0;
+    }
+  }
+  &__search {
+    
   }
   .language-dropdown {
     display: inline-block;
@@ -53,16 +63,13 @@
         display: block;
       }
     }
+    @include header_breakpoint(max) {
+      display: block;
+    }
   }
   .language-list {
-    position: absolute;
     width: 100%;
     background: #fff;
-    left: 0;
-    border-radius: 3px;
-    box-shadow: 0px 0px 0px 1px #c7c7c7 inset;
-    color: #5d5d5d;
-    display: none;
     li {
       cursor: pointer;
       padding: 0.5em 0.8em;
@@ -73,6 +80,31 @@
         color: #fff;
       }
     }
+    display: block;
+    @include header_breakpoint {    
+      display: none;      
+      border-radius: 3px;
+      box-shadow: 0px 0px 0px 1px #c7c7c7 inset;
+      position: absolute;
+      left: 0;
+      color: #5d5d5d;
+    }
+    @include header_breakpoint(max) {
+      background: red;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      color: #fff;
+      li {
+        padding: 1em 0.8em;
+        font-size: 1rem;
+          text-align: center;
+          font-weight: 600;
+        &:not(:last-child){
+          border-right: 1px solid #000;
+        }
+      }
+    }
+
   }
   .language-selector-label {
     position: relative;
@@ -85,6 +117,9 @@
       transform: rotate(45deg);
       vertical-align: middle;
       margin: -4px 0 0 10px;
+    }    
+    @include header_breakpoint(max) {
+      display: none;
     }
   }
   &__search {
@@ -314,20 +349,32 @@
           padding-left: 0.4em;  
           padding-right: 0.4em;  
         }
+        @include header_breakpoint(max) {
+           padding-left: 1em;  
+          padding-right: 1em; 
+        }
       }
+    }
+    @include header_breakpoint(max) {
+      overflow: auto;
+      padding: 0 0 10px 0;
     }
   }
   &.active {
     .navMainWrap {
-        height: 100vh;
         display: flex;
-        flex-direction: column;
        .nav-main {
         display: block;
-        @include header_breakpoint(max) {
-          flex-grow: 2;
-        }
+        
       }
+      @include header_breakpoint(max) {
+          height: calc(100vh - 50px);
+          flex-direction: column;
+          flex-grow: 2;
+          display: grid;
+            flex-grow: 2;
+            grid-template-rows: 1fr auto auto;
+        }
     }
   }
   .menu-toggle {
