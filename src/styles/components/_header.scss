@@ -6,6 +6,12 @@
   min-height: 50px; 
   background: #3F3F3F;
   display: flex;
+  @include header_breakpoint(max) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
   .header__logo {
     background: #E60000;
     display: grid;
@@ -47,6 +53,7 @@
       left: 0;
       right: 0;
       bottom: 52px;
+      transform: translate3d(0, 0, 0);
     }
   }
   &__lang {
@@ -61,6 +68,7 @@
     left: 0;
     bottom: 0;
     right: 0;
+    transform: translate3d(0, 0, 0);
     }
   }
   &__search {

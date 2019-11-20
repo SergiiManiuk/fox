@@ -351,6 +351,12 @@ a:hover {
   min-height: 50px;
   background: #3F3F3F;
   display: flex; }
+  @media (max-width: 1280px) {
+    .header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0; } }
   .header .header__logo {
     background: #E60000;
     display: grid;
@@ -385,7 +391,8 @@ a:hover {
       position: fixed;
       left: 0;
       right: 0;
-      bottom: 52px; } }
+      bottom: 52px;
+      transform: translate3d(0, 0, 0); } }
   .header__lang a {
     display: inline-block;
     padding: 7px; }
@@ -396,7 +403,8 @@ a:hover {
       position: fixed;
       left: 0;
       bottom: 0;
-      right: 0; } }
+      right: 0;
+      transform: translate3d(0, 0, 0); } }
   .header .language-dropdown {
     display: inline-block;
     position: relative; }
