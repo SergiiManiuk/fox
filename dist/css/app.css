@@ -347,6 +347,9 @@ a:active,
 a:hover {
   outline: 0; }
 
+body {
+  overflow: hidden; }
+
 .header {
   min-height: 50px;
   background: #3F3F3F;
