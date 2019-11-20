@@ -53,7 +53,7 @@
 			nav.find('.navMainWrap li .dd-toggle').on('click', function(e) {
 
 				e.preventDefault();
-				$(this).parent('li').children('ul').stop(true, true).slideToggle(400);
+				$(this).parent('li').children('ul').stop(true, true).slideToggle(200);
 				$(this).parent('li').toggleClass('open');
 			});
 
