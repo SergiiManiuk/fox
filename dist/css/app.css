@@ -627,7 +627,7 @@ a:hover {
         left: 220px; } }
     @media (max-width: 1280px) {
       .stellarnav .navMainWrap {
-        height: calc(100vh - 50px);
+        height: calc(100% - 50px);
         flex-direction: column;
         flex-grow: 2;
         grid-template-rows: 1fr;
