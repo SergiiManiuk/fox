@@ -620,7 +620,14 @@ a:hover {
         padding: 0.5em 1.3em; }
         @media (max-width: 1280px) {
           .stellarnav .navMainWrap ul ul > li a {
-            padding: 0.1em 1em 0.3em 0.9em; } }
+            padding: 0.4em 1em 0.4em 1.9em; } }
+        @media (max-width: 1280px) {
+          .stellarnav .navMainWrap ul ul > li a.dd-toggle {
+            top: 0;
+            height: 32px; } }
+      @media (min-width: 1280px) {
+        .stellarnav .navMainWrap ul ul > li:last-child > a {
+          padding-bottom: 1em; } }
     @media (min-width: 1280px) {
       .stellarnav .navMainWrap ul ul ul {
         top: 0;
@@ -706,7 +713,8 @@ a:hover {
         transform: rotate(-45deg) translateY(-50%);
         top: 50%;
         position: absolute;
-        right: 10px; } }
+        right: 10px;
+        margin: 0; } }
     .stellarnav li.drop-left li.has-sub > a:after {
       transform: rotate(-45deg) translateY(-50%);
       top: 50%;

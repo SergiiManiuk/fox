@@ -343,7 +343,20 @@
         a {
           padding: 0.5em 1.3em;
           @include header_breakpoint(max) {
-            padding: 0.1em 1em 0.3em 0.9em;
+            padding: 0.4em 1em 0.4em 1.9em;
+          }
+           &.dd-toggle {
+            @include header_breakpoint(max) {
+              top: 0;
+              height: 32px;
+            }
+          }
+        }
+        &:last-child {
+          & > a {
+            @include header_breakpoint {
+              padding-bottom: 1em;
+            }
           }
         }
       }
@@ -463,6 +476,7 @@
               top: 50%;
               position: absolute;
               right: 10px;
+              margin: 0;
             }
           }
         } 

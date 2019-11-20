@@ -69,18 +69,20 @@
 				$(parentItems).each(function() {
 					// first-level
 						$(this).on('mouseenter', function(){
-							$(this).children('ul').stop(true, true).slideDown(settings.openingSpeed);
+							$(this).children('ul').show(0);
 						});
 						$(this).on('mouseleave', function(){
-							$(this).children('ul').stop(true, true).delay(settings.closingDelay).slideUp(settings.openingSpeed);
+							$(this).children('ul').hide(0);
 						});
 
 						// second level and below
 						$(this).find('li.has-sub').on('mouseenter', function(){
-							$(this).children('ul').stop(true, true).slideDown(settings.openingSpeed);
+							$(this).children('ul').show(0);
+
+							console.log('sdfsdf');
 						});
 						$(this).find('li.has-sub').on('mouseleave', function(){
-							$(this).children('ul').stop(true, true).delay(settings.closingDelay).slideUp(settings.openingSpeed);
+							$(this).children('ul').hide(0)
 						});
 					// }
 				});
