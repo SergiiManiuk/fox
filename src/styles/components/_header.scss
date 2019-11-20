@@ -49,7 +49,7 @@
       padding: 7px;
     }
     @include header_breakpoint(max) {
-      padding: 20px 0 0 0;
+      padding: 0;
       display: block;
     }
   }
@@ -355,12 +355,13 @@
         @include header_breakpoint(max) {
            padding-left: 1em;  
           padding-right: 1em; 
+          white-space: normal;
         }
       }
     }
     @include header_breakpoint(max) {
       overflow: auto;
-      padding: 0 0 10px 0;
+      // padding: 0 0 10px 0;
     }
   }
   &.active {
@@ -371,7 +372,7 @@
         
       }
       @include header_breakpoint(max) {
-          height: calc(100vh - 50px);
+          height: calc(100vh - 55px);
           flex-direction: column;
           flex-grow: 2;
           // display: grid;
