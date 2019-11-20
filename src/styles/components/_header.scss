@@ -53,10 +53,10 @@ body {
   &__feedback {
     @include header_breakpoint(max) {
       padding: 20px;
-      position: fixed;
+      // position: fixed;
       left: 0;
       right: 0;
-      bottom: 52px;
+      // bottom: 52px;
       transform: translate3d(0, 0, 0);
     }
   }
@@ -68,9 +68,9 @@ body {
     @include header_breakpoint(max) {
       padding: 0;
       display: block;
-          position: fixed;
+          // position: fixed;
     left: 0;
-    bottom: 0;
+    // bottom: 0;
     right: 0;
     transform: translate3d(0, 0, 0);
     }
@@ -349,7 +349,7 @@ body {
       flex-direction: column;
       flex-grow: 2;
       grid-template-rows: 1fr;
-      padding: 0 0 120px 0;
+      padding: 0;
       top: 50px;
       position: fixed;
       left: 0;
