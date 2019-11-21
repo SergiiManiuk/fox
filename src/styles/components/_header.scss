@@ -3,7 +3,7 @@
 @import '../base/mixins';
 
 body {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .header {
@@ -11,10 +11,10 @@ body {
   background: #3F3F3F;
   display: flex;
   @include header_breakpoint(max) {
-    // position: fixed;
-    // left: 0;
-    // right: 0;
-    // top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
   }
   .header__logo {
     background: #E60000;

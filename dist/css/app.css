@@ -347,13 +347,16 @@ a:active,
 a:hover {
   outline: 0; }
 
-body {
-  overflow: hidden; }
-
 .header {
   min-height: 50px;
   background: #3F3F3F;
   display: flex; }
+  @media (max-width: 1280px) {
+    .header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0; } }
   .header .header__logo {
     background: #E60000;
     display: grid;
@@ -731,6 +734,13 @@ body {
     top: 0;
     left: 0;
     z-index: 9999; }
+
+body.hidden {
+  overflow: hidden; }
+
+@media (max-width: 1280px) {
+  main {
+    padding: 50px 0 0 0; } }
 
 .footer {
   background: #f2f2f2;

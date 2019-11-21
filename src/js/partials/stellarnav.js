@@ -28,6 +28,7 @@
 			$('.menu-toggle').on('click', function(e) {
 				e.preventDefault();
 					nav.toggleClass('active');
+					$('body').toggleClass('hidden');
 
 					if(nav.hasClass('active') && nav.hasClass('mobile')) {
 						// closes the menu when clicked outside of it
@@ -36,6 +37,7 @@
 							if(nav.hasClass('mobile')) {
 							  	if (!$(event.target).closest(nav).length) {
 							  		nav.removeClass('active');
+							  		$('body').removeClass('hidden');
 								}
 							}
 						});
