@@ -14,7 +14,7 @@
 		// default settings
 		var settings = $.extend( {
 			breakpoint: 1280, // number in pixels to determine when the nav should turn mobile friendly
-			openingSpeed: 0, // how fast the dropdown should open in milliseconds
+			openingSpeed: 300, // how fast the dropdown should open in milliseconds
 			closingDelay: 0 // controls how long the dropdowns stay open for in milliseconds
 		}, options );
 
@@ -71,20 +71,20 @@
 				$(parentItems).each(function() {
 					// first-level
 						$(this).on('mouseenter', function(){
-							$(this).children('ul').show(0);
+							$(this).children('ul').stop(true, true).slideDown(settings.openingSpeed);
 						});
 						$(this).on('mouseleave', function(){
-							$(this).children('ul').hide(0);
+							$(this).children('ul').stop(true, true).delay(settings.closingDelay).slideUp(settings.openingSpeed);
 						});
 
 						// second level and below
 						$(this).find('li.has-sub').on('mouseenter', function(){
-							$(this).children('ul').show(0);
+							$(this).children('ul').stop(true, true).slideDown(settings.openingSpeed);
 
 							console.log('sdfsdf');
 						});
 						$(this).find('li.has-sub').on('mouseleave', function(){
-							$(this).children('ul').hide(0)
+							$(this).children('ul').stop(true, true).delay(settings.closingDelay).slideUp(settings.openingSpeed);
 						});
 					// }
 				});

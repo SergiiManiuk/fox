@@ -1,8 +1,3 @@
-$wrap: "only screen and (max-width: 1140px)";
-
-
-
-
 $tablet_slider_min: "(min-width: 768px)";
 $tablet_slider_max: "(max-width: 768px)";
 
@@ -11,10 +6,6 @@ $tablet_m_max_custom: "(max-width: 740px)";
  
 $ipad_min_v:  "only screen and (min-width: 769px)"; 
 $ipad_max_v:  "only screen and (max-width: 768px)"; 
-
-
-
-
 
 
 $tablet_s_min: '601px';
@@ -30,21 +21,6 @@ $ipad_landscape: '1024px';
 $credit_block_breakpoint: "820px";
 
 $desktop_1100: '1100px';
-
-
-
-// Small tablets and large smartphones (landscape view) 
-$screen-sm-min: '576px';
-
-// Small tablets (portrait view)
-$screen-md-min: '768px';
-
-// Tablets and small desktops
-$screen-lg-min: '992px';
-
-// Large tablets and desktops
-$screen-xl-min: '1200px';
-
 
 $desktop_860: "860px";
 @mixin desktop_860_max {
@@ -245,7 +221,7 @@ $tablet_s_740_min: "740px";
 $tablet_860: "860px";
 $tablet_859: "859px"
 ;
-@mixin tablet_860_max {
+@mixin _860_max {
    @media (max-width: #{$tablet_860}) {
        @content;
    }
@@ -279,12 +255,12 @@ $tablet_420_breakpoint_max_height: '420px';
 
 $desktop_1200: '1200px';
 // Large devices
-@mixin desktop_1200_min {
+@mixin _1200_min {
    @media (min-width: #{$desktop_1200}) {
        @content;
    }
 }
-@mixin desktop_1200_max {
+@mixin _1200_max {
    @media (max-width: #{$desktop_1200}) {
        @content;
    }
@@ -298,7 +274,7 @@ $desktop_1024_max: "1024px";
 }
 
 $desktop_1500: "1500px";
-@mixin desktop_1500_max {
+@mixin _1500_max {
    @media (max-width: #{$desktop_1500}) {
        @content;
    }
@@ -371,16 +347,17 @@ $desktop_1280: "1280px";
 $desktop_min_small: "only screen and (min-width: 992px)";
 
 
-$header_breakpoint_value: "1280px"; 
+$header_breakpoint_value_min: "1280px"; 
+$header_breakpoint_value_max: "1279px"; 
 
 @mixin header_breakpoint($breakpoint: min ) {   
 
     @if $breakpoint == max {
-        @media (max-width: ($header_breakpoint_value)) {
+        @media (max-width: ($header_breakpoint_value_max)) {
             @content;
         }
     } @else {
-      @media (min-width: ($header_breakpoint_value)) {
+      @media (min-width: ($header_breakpoint_value_min)) {
         @content;
       } 
     }

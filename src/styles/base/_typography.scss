@@ -1,0 +1,17 @@
+@import 'vars';
+@import 'media';
+@import 'mixins'; 
+
+
+.heading {
+  @include font-size(52px);
+  @include line-height(20px);
+  display: flex;
+  align-items: center;
+  color: #3F3F3F;
+  span {
+    font-weight: 600;
+    margin: 0 10px 0 10px;
+    font-size: 0.95em;
+  }
+}

@@ -1,0 +1,16 @@
+@import '../base/vars';
+@import '../base/media';
+@import '../base/mixins';
+
+.brands-slider {
+  .heading {
+    &::before {
+      background:  url("../svg/sprite.svg#logo_brand") no-repeat center / cover; 
+      content: '';
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      background-size: contain;
+    }
+  }
+}

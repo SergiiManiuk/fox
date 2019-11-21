@@ -11,6 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpif = require('gulp-if');
 var argv = require('yargs').argv;
 var del = require("del");
+var  svgSprite = require('gulp-svg-sprite');
 
 function browserTask() {
   browserSync({
@@ -81,13 +82,39 @@ function clean() {
   return del(["./dist/"]);
 }
 exports.clean = clean;
+
+var config = {
+    mode: {
+      css: { // Activate the «css» mode
+        render: {
+          css: false // Activate CSS output (with default options)
+        }
+      },
+      stack : {
+        sprite: "../sprite.svg"
+      }
+    }
+  };
+
+function svg() {
+  return gulp.src('src/img/svg/*.svg')
+  .pipe(svgSprite(config))
+  .pipe(gulp.dest('./dist/svg'));
+}
+exports.svg = svg;
+
+
+
+
+
+
 function watchFiles() {
   gulp.watch("src/styles/**/*.scss", styles);
   gulp.watch("src/js/app.js", scripts);
   gulp.watch("./*.html", html);
 }
 
-const build = gulp.series(clean, styles, scripts);
+const build = gulp.series(clean, styles, scripts, svg);
 const watch = gulp.parallel(watchFiles, browserTask);
 
 exports.watch = watch;

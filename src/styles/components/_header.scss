@@ -15,6 +15,7 @@ body {
     left: 0;
     right: 0;
     top: 0;
+    z-index: 2;
   }
   .header__logo {
     background: #E60000;
@@ -211,8 +212,7 @@ body {
       display: none;
     } 
     & + .header__search {
-      // display: block;
-          transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
     }
   
 }
@@ -385,7 +385,7 @@ body {
     }
     & li {
       & > a {
-        @include desktop_1500_max {
+        @include _1500_max {
           padding-left: 0.7em;
           padding-right: 0.7em;
           white-space: nowrap;

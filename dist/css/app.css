@@ -314,20 +314,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-body {
-  background: #f2f2f2;
-  line-height: 1;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column; }
-
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -347,16 +333,29 @@ a:active,
 a:hover {
   outline: 0; }
 
+.heading {
+  font-size: 52px;
+  font-size: 3.25em;
+  line-height: 1.25em;
+  display: flex;
+  align-items: center;
+  color: #3F3F3F; }
+  .heading span {
+    font-weight: 600;
+    margin: 0 10px 0 10px;
+    font-size: 0.95em; }
+
 .header {
   min-height: 50px;
   background: #3F3F3F;
   display: flex; }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .header {
       position: fixed;
       left: 0;
       right: 0;
-      top: 0; } }
+      top: 0;
+      z-index: 2; } }
   .header .header__logo {
     background: #E60000;
     display: grid;
@@ -364,7 +363,7 @@ a:hover {
     justify-content: center;
     padding: 0 30px;
     position: relative; }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .header .header__logo {
         padding: 5px 75px;
         width: 100%;
@@ -385,7 +384,7 @@ a:hover {
     @media (min-width: 1280px) {
       .header__feedback, .header__lang, .header__search {
         padding: 0 15px; } }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .header__feedback {
       padding: 20px;
       left: 0;
@@ -394,7 +393,7 @@ a:hover {
   .header__lang a {
     display: inline-block;
     padding: 7px; }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .header__lang {
       padding: 0;
       display: block;
@@ -406,7 +405,7 @@ a:hover {
     position: relative; }
     .header .language-dropdown:hover .language-list {
       display: block; }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .header .language-dropdown {
         display: block; } }
   .header .language-list {
@@ -429,7 +428,7 @@ a:hover {
         position: absolute;
         left: 0;
         color: #5d5d5d; } }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .header .language-list {
         background: red;
         display: grid;
@@ -455,7 +454,7 @@ a:hover {
       transform: rotate(45deg);
       vertical-align: middle;
       margin: -4px 0 0 10px; }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .header .language-selector-label {
         display: none; } }
   .header__search_input {
@@ -474,7 +473,7 @@ a:hover {
       text-decoration: underline; }
     .header__search_input:-ms-input-placeholder {
       text-decoration: underline; }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .header__search_input {
         padding: 10px 25px;
         width: 100%; } }
@@ -490,10 +489,10 @@ a:hover {
     position: absolute;
     right: 10px;
     height: 50px; }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .header__search_submit {
         display: none; } }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .header__search {
       position: absolute;
       left: 0;
@@ -543,7 +542,7 @@ a:hover {
       margin-bottom: auto; }
       .stellarnav .navMainWrap > ul > li include header_breakpoint {
         height: 100%; }
-      @media (max-width: 1280px) {
+      @media (max-width: 1279px) {
         .stellarnav .navMainWrap > ul > li {
           border-bottom: 1px solid #2E332F; } }
       @media (min-width: 1280px) {
@@ -556,7 +555,7 @@ a:hover {
         right: 220px; }
     .stellarnav .navMainWrap li > a.dd-toggle {
       display: none; }
-      @media (max-width: 1280px) {
+      @media (max-width: 1279px) {
         .stellarnav .navMainWrap li > a.dd-toggle {
           position: absolute;
           top: 0;
@@ -587,7 +586,7 @@ a:hover {
       text-align: left;
       display: none;
       background: #3f3f3f; }
-      @media (max-width: 1280px) {
+      @media (max-width: 1279px) {
         .stellarnav .navMainWrap ul ul {
           position: relative;
           width: auto;
@@ -595,10 +594,10 @@ a:hover {
           padding: 0 0 0.5em 1em; } }
       .stellarnav .navMainWrap ul ul > li a {
         padding: 0.5em 1.3em; }
-        @media (max-width: 1280px) {
+        @media (max-width: 1279px) {
           .stellarnav .navMainWrap ul ul > li a {
             padding: 0.4em 1em 0.4em 1.9em; } }
-        @media (max-width: 1280px) {
+        @media (max-width: 1279px) {
           .stellarnav .navMainWrap ul ul > li a.dd-toggle {
             top: 0;
             height: 32px; } }
@@ -609,7 +608,7 @@ a:hover {
       .stellarnav .navMainWrap ul ul ul {
         top: 0;
         left: 220px; } }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .stellarnav .navMainWrap {
         height: calc(100% - 50px);
         flex-direction: column;
@@ -653,12 +652,12 @@ a:hover {
       .stellarnav .nav-main li > a {
         padding-left: 0.4em;
         padding-right: 0.4em; } }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .stellarnav .nav-main li > a {
         padding-left: 2em;
         padding-right: 1em;
         white-space: normal; } }
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
       .stellarnav .nav-main {
         overflow: auto;
         padding: 10px 0 0 0;
@@ -687,14 +686,14 @@ a:hover {
     display: flex; }
     .stellarnav.active .navMainWrap .nav-main {
       display: block; }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .stellarnav.active .menu-toggle span {
       transform: scale(0); }
     .stellarnav.active .menu-toggle::before {
       transform: translateY(5px) rotate(136deg); }
     .stellarnav.active .menu-toggle::after {
       transform: translateY(-9px) rotate(-135deg); } }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .stellarnav {
       width: auto;
       z-index: 6;
@@ -724,7 +723,7 @@ a:hover {
       top: 50%;
       position: absolute;
       right: 10px; }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .stellarnav.active .navMainWrap {
       transform: translate(0, 0); } }
   .stellarnav.fixed {
@@ -735,10 +734,15 @@ a:hover {
     left: 0;
     z-index: 9999; }
 
+.wrap {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto; }
+
 body.hidden {
   overflow: hidden; }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
   main {
     padding: 50px 0 0 0; } }
 
@@ -748,8 +752,57 @@ body.hidden {
   font-size: 13px;
   text-align: center; }
 
-.header__row, .check-out.container, .footer__row {
-  max-width: 1500px;
-  margin: 0 auto; }
+.owl-carousel .item {
+  position: relative; }
+
+.index-banner .owl-item img {
+  max-width: 100%; }
+
+@media (max-width: 1500px) {
+  .index-banner {
+    font-size: 14px; } }
+
+@media (max-width: 1200px) {
+  .index-banner {
+    font-size: 12px; } }
+
+@media (max-width: 860px) {
+  .index-banner {
+    font-size: 11px; } }
+
+.index-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  width: 40%; }
+
+.index-banner-slogan {
+  font-weight: 600;
+  font-size: 52px;
+  font-size: 3.25em;
+  line-height: 1.2em;
+  color: #3F3F3F;
+  margin: 0 0 0.3em 0; }
+
+.index-banner-description {
+  color: #656B6F;
+  font-size: 21px;
+  font-size: 1.3125em;
+  margin: 0 0 1.6em 0; }
+
+.index-banner-link {
+  background: url("../svg/sprite.svg#banner_arrow") no-repeat center/cover;
+  display: inline-block;
+  width: 5.625em;
+  height: 2em; }
+
+.brands-slider .heading::before {
+  background: url("../svg/sprite.svg#logo_brand") no-repeat center/cover;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: contain; }
 
 /*# sourceMappingURL=app.css.map */
