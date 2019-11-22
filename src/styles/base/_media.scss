@@ -52,13 +52,25 @@ $small_mobile: "500px";
 }
 
 $small_mobile_530: "530px";
-@mixin small_mobile_530 {
+@mixin _530_max {
    @media (max-width: #{$small_mobile_530}) {
        @content;
    }
 }
-@mixin small_mobile_530_min {
+@mixin _530_min {
    @media (min-width: #{$small_mobile_530}) {
+       @content;
+   }
+}
+
+$small_mobile_560: "560px";
+@mixin _560_max {
+   @media (max-width: #{$small_mobile_560}) {
+       @content;
+   }
+}
+@mixin _560_min {
+   @media (min-width: #{$small_mobile_560}) {
        @content;
    }
 }
@@ -140,15 +152,14 @@ $tablet_600_max: '600px';
 }
 
 
-// Large devices
-@mixin desktop_1100_min {
+@mixin _1100_min {
    @media (min-width: #{$desktop_1100}) {
        @content;
    }
 }
  
 
-@mixin desktop_1100_max {
+@mixin _1100_max {
    @media (max-width: #{$desktop_1100}) {
        @content;
    }
@@ -212,8 +223,14 @@ $tablet_s_670: "670px";
 
 
 $tablet_s_740_min: "740px";
-@mixin tablet_s_740_min {
+@mixin _740_min {
    @media (min-width: #{$tablet_s_740}) {
+       @content;
+   }
+}
+
+@mixin _740_max {
+   @media (max-width: #{$tablet_s_740}) {
        @content;
    }
 }
@@ -273,6 +290,17 @@ $desktop_1024_max: "1024px";
    }
 }
 
+
+$desktop_1450: "1450px";
+@mixin _1450_max {
+   @media (max-width: #{$desktop_1450}) {
+       @content;
+   }
+}
+
+
+
+
 $desktop_1500: "1500px";
 @mixin _1500_max {
    @media (max-width: #{$desktop_1500}) {
@@ -280,7 +308,7 @@ $desktop_1500: "1500px";
    }
 }
 
-@mixin desktop_1500_min {
+@mixin _1500_min {
    @media (min-width: #{$desktop_1500}) {
        @content;
    }

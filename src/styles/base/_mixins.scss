@@ -5,7 +5,7 @@
   &:-ms-input-placeholder      {@content}  
 }
 
- 
+ /* calculate REM */
 @function calculateRem($size) {
   $remSize: $size / 16px;
   @return #{$remSize}rem;
@@ -15,7 +15,7 @@
   font-size: calculateRem($size);
 }
 
-
+/* calculate EM */
 @function calculateEm($size) {
   $emSize: $size / 16px;
   @return #{$emSize}em;
@@ -28,13 +28,33 @@
   line-height: calculateEm($size) ;
 }
 
-
+/* Background for fill of SVG Base64*/
 @function svg-bg($colour) {
     @return '%23' + str-slice('#{$colour}', 2, -1)
 }
 
-$browser-context: 16; // Default
+/* Responsive text */
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
 
-@function em($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}em
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
 }

@@ -17,6 +17,11 @@
   @include _860_max {
     font-size: 11px;
   }
+  .owl-nav.disabled + .owl-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .index-banner-text {

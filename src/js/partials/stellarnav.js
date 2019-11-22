@@ -14,7 +14,7 @@
 		// default settings
 		var settings = $.extend( {
 			breakpoint: 1280, // number in pixels to determine when the nav should turn mobile friendly
-			openingSpeed: 300, // how fast the dropdown should open in milliseconds
+			openingSpeed: 200, // how fast the dropdown should open in milliseconds
 			closingDelay: 0 // controls how long the dropdowns stay open for in milliseconds
 		}, options );
 
