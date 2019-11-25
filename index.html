@@ -24,9 +24,7 @@
     <link href="./dist/css/app.css" rel="stylesheet">
 </head>
 <body>
-
-
-<header class="header">  
+ <header class="header">  
     <div class="header__logo">
         <a href="#">
             <img src="./src/img/logo.png" alt="лого фокстрот груп">
@@ -87,14 +85,13 @@
         <input type="text" class="header__search_input" placeholder="Поиск">
         <input type="submit" class="header__search_submit">
     </div>
-</header>
+</header> 
 
 
 <main role="main">
-       
-
-    <div class="wrap-banner-block">  
-        <!-- begin:  slider banner -->
+      <!-- begin:  slider banner -->
+    <section class="wrap-banner-block">  
+  
             <div id="indexBanner" class="wrap-banner owl-carousel owl-theme index-banner">
                 <div class="item">
                      <img src="./src/img/slider_index/index_image_top.png" alt="">
@@ -127,14 +124,14 @@
                     </div>
                 </div>
             </div>
-        <!-- end: slider banner-->
-    </div>
-  <br>
-    <!-- begin: slider brand-->
-    <div class="wrap">
-        <div class="wrap-brand-slider">
+     
+    </section> 
+   <!-- end: slider banner-->
+    <!-- begin: slider brand-->  
+    <section class="wrap wrap-brand-slider-outer">
+        <div class="wrap-slider-default wrap-brand-slider">
             <p class="heading"><span>ГКФ</span><span>развивает бренды<span></p>                     
-            <div class="owl-carousel owl-theme brand-slider">
+            <div class="owl-carousel owl-theme slider-default slider-brand">
                 <div class="item">
                      <img src="./src/img/brands/foxtrot.png" alt="">
                 </div>
@@ -182,15 +179,13 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- begin: slider brand-->
-  <br>
+    </section>
+    <!-- end: slider brand-->
 
-    <div class="wrap-report">
+
+    <section class="wrap-report">
         <div class="wrap">
             <div class="report-block">
-
-
                 <div class="report-tabs">
       
 
@@ -202,47 +197,192 @@
                       <div class="report-tabs__content  active">
                         <p class="heading"><span>Годовая</span><span>отчетность<span></p>
                         <p>Группа компаний «ФОКСТРОТ» - придерживается принципов Глобального Договора ООН и ежегодно отчитывается о социальной деятельности бизнеса.</p>
+                        <p>
+                            <a href="" class="btn">Смотреть все отчеты</a>
+                        </p>
+                         
                       </div>
 
                       <div class="report-tabs__content">
                           <p class="heading"><span>Месячный</span><span>отчет<span></p>
                             <p>Группа компаний «ФОКСТРОТ» - придерживается принципов Глобального Договора ООН и ежегодно отчитывается о социальной деятельности бизнеса.</p>
+                            <p>
+                            <a href="" class="btn">Смотреть все отчеты</a>
+                        </p>
                       </div>               
-                  
-
-                </div>   
-
-
-
-            </div>
-<!-- 
-            <div class="report-image">
-                  <img src="./src/img/report.png" alt="">     
-            </div> -->
-
-
-      
+                </div>
+                <div class="report-image">
+                      <img src="./src/img/report.png" alt="">     
+                </div>
+            </div>      
         </div>
-    </div>
+    </section> 
 
-        
+     <section class="wrap-news">
+         <div class="wrap">
+            <div class="news"> 
+                <div class="news__heading">
 
+                    <p class="heading"><span>Новости</span><span>брендов<span></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                    <a href="" class="btn">Все новости</a>
+                </div>
+            </div>
+            <!-- begin: slider news-->
+            <div class="wrap-slider-default">
+                <div class="owl-carousel owl-theme slider-default">
 
+                    <div class="slider-default__item">
+                        <div class="slider-default__image">
+                            <img src="./src/img/slider_item.png" alt="">
+                        </div>
+                        <div class="slider-default__content">
+                            <div class="slider-default__content_inner">
+                                <div class="slider-default__heading">
+                                    <p>Фокстрот закрепился в тройке самых дорогих брендов</p>
+                                </div>
+                                <div class="slider-default__description">
+                                    <p>Журнал Корреспондент опубликовал свежий рейтинг из 50 национальных брендов и назвал самые ...</p>
+                                </div>
+                                <div class="link-more">
+                                    <a href="" class="link-more"><span>Читать дальше</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="slider-default__item">
+                        <div class="slider-default__image">
+                            <img src="./src/img/slider_item.png" alt="">
+                        </div>
+                        <div class="slider-default__content">
+                            <div class="slider-default__content_inner">
+                                <div class="slider-default__heading">
+                                    <p>Фокстрот закрепился в тройке самых дорогих брендов</p>
+                                </div>
+                                <div class="slider-default__description">
+                                    <p>Журнал Корреспондент опубликовал свежий рейтинг из 50 национальных брендов и назвал самые ...</p>
+                                </div>
+                                <div class="link-more">
+                                    <a href="" class="link-more"><span>Читать дальше</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="slider-default__item">
+                        <div class="slider-default__image">
+                            <img src="./src/img/slider_item.png" alt="">
+                        </div>
+                        <div class="slider-default__content">
+                            <div class="slider-default__content_inner">
+                                <div class="slider-default__heading">
+                                    <p>Фокстрот закрепился в тройке самых дорогих брендов</p>
+                                </div>
+                                <div class="slider-default__description">
+                                    <p>Журнал Корреспондент опубликовал свежий рейтинг из 50 национальных брендов и назвал самые ...</p>
+                                </div>
+                                <div class="link-more">
+                                    <a href="" class="link-more"><span>Читать дальше</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="slider-default__item">
+                        <div class="slider-default__image">
+                            <img src="./src/img/slider_item.png" alt="">
+                        </div>
+                        <div class="slider-default__content">
+                            <div class="slider-default__content_inner">
+                                <div class="slider-default__heading">
+                                    <p>Фокстрот закрепился в тройке самых дорогих брендов</p>
+                                </div>
+                                <div class="slider-default__description">
+                                    <p>Журнал Корреспондент опубликовал свежий рейтинг из 50 национальных брендов и назвал самые ...</p>
+                                </div>
+                                <div class="link-more">
+                                    <a href="" class="link-more"><span>Читать дальше</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>   
+            <!-- end: slider news-->
+            <div class="wrap-seo-bottom">
+                <a href="#" class="logo-footer">
+                    <img src="./src/img/svg/logo_seo.svg" alt="лого фокстрот груп">
+                </a>
+                <h1>Магазин бытовой техники и электроники</h1>
+                <h2>Магазин бытовой техники и электроники</h2>
+                <h3>Магазин бытовой техники и электроники</h3>
+                <h4>Магазин бытовой техники и электроники</h4>
+                <h5>Магазин бытовой техники и электроники</h5>
+                <h6>Магазин бытовой техники и электроники</h6>
+                <p>Разнообразные смартфоны прочно вошли в повседневную жизнь каждого человека. За короткий срок появилось примерно тридцать фирм с широким ассортиментом электронного товара. Это английское понятие в переводе означает – умный телефон. Трудно представить выполнение ежедневных дел Разнообразные смартфоны прочно вошли в повседневную жизнь каждого человека. За короткий срок появилось примерно тридцать фирм с широким ассортиментом электронного товара. Это английское понятие в переводе означает – умный телефон. Трудно представить выполнение ежедневных дел.</p>
+                <p>
+                    <a href="" class="link-more"><span>Читать дальше</span></a>
+                </p>
+            </div>
 
-
-
+         </div>
+    </section> 
  
 </main>
 
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <footer>
-    
+    <div class="wrap">
+        <div class="footer-block">
+            <div class="footer-column">
+                <p>Информация</p>
+                <ul>
+                    <li><a href="">Menu One</a></li>
+                    <li><a href="">Menu Two</a></li>
+                    <li><a href="">Menu Three</a></li>
+                    <li><a href="">Menu Four</a></li>
+                </ul>
+            </div><!-- column -->
+            <div class="footer-column">
+                <p>Компания</p>
+                <ul>
+                    <li><a href="">Menu One</a></li>
+                    <li><a href="">Menu Two</a></li>
+                    <li><a href="">Menu Three</a></li>
+                    <li><a href="">Menu Four</a></li>
+                </ul>
+            </div><!-- column -->
+            <div class="footer-column">
+                <p>Собственники</p>
+                <ul>
+                    <li><a href="">Оплата</a></li>
+                    <li><a href="">Доставка</a></li>
+                    <li><a href="">Возврат товара</a></li>
+                </ul>
+            </div><!-- column -->
+            <div class="footer-column">
+                <p>Контакты</p>
+                 <ul>
+                    <li>Пн-Пт: 08:30 - 21:00</li>
+                    <li>Сб-Вс: 08:30 - 21:00</li>
+                    <li><a href="">Обратный звонок</a></li>
+                    <li><a href="">Написать нам</a></li>
+                    <li><a href="">Наши магазины</a></li>
+                </ul>
+                <ul class="footer-icons-social">
+                    <li><a href="" class="icon-footer icon-facebook"></a></li>
+                    <li><a href="" class="icon-footer icon-twitter"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="wrap">
+            <p>© 1823 — 2019</p>
+        </div>
+    </div>
 </footer>
+ 
 
 
 

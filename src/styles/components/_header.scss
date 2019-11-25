@@ -95,6 +95,9 @@ body {
   .language-list {
     width: 100%;
     background: #fff;
+    margin: 0;
+    padding: 0;
+    list-style: none;
     li {
       cursor: pointer;
       padding: 0.5em 0.8em;
@@ -369,6 +372,8 @@ body {
     display: flex;
     align-items: center;
     flex-grow: 1;
+        margin: 0;
+    padding: 0;
     li {
       a {
         padding: 15px;

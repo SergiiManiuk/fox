@@ -3,11 +3,14 @@
 @import '../base/mixins';
 
 .wrap {
-  max-width: 1400px;
+  max-width: 1360px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  padding: 0 2%;
+      @include _1500_min {
   padding: 0 3%;
+      }
 }
  
 

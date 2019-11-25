@@ -28,7 +28,7 @@ $(document).ready(function($) {
       dots: false
     })
 
-    $('.brand-slider').owlCarousel({
+    $('.slider-brand').owlCarousel({
       margin: 0,
       nav: true,
       responsiveClass:true,
@@ -51,6 +51,35 @@ $(document).ready(function($) {
         },
         1500: {
           items: 5
+        }
+      }
+    })
+
+    $('.slider-default').owlCarousel({
+      margin: 0,
+      nav: true,
+      responsiveClass:true,
+      loop: true,
+      items : 3,
+      margin: 30,
+      stagePadding: 4,
+      nav: true,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        560: {
+          items: 1
+        },
+        769: {
+          items: 1
+        },
+        1100: {
+          items: 3
+        },
+        1500: {
+          items: 3
         }
       }
     })
