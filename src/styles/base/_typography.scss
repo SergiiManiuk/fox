@@ -12,6 +12,7 @@ $max_font: 52px;
   color: #3F3F3F;
   text-align: center;
   @include fluid-type(300px, 1920px, 25px, 48px);
+  margin: 0 0 0.3em 0;
   span:first-child {
     font-weight: 600;
     margin: 0 0.25em 0 0.25em;

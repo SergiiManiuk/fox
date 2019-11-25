@@ -333,6 +333,11 @@ a:active,
 a:hover {
   outline: 0; }
 
+p {
+  color: #656B6F;
+  line-height: 1.5;
+  margin: 0 0 0.4em 0; }
+
 /* calculate REM */
 /* calculate EM */
 /* Background for fill of SVG Base64*/
@@ -344,7 +349,8 @@ a:hover {
 .heading {
   align-items: center;
   color: #3F3F3F;
-  text-align: center; }
+  text-align: center;
+  margin: 0 0 0.3em 0; }
   .heading {
     font-size: 25px; }
     @media screen and (min-width: 300px) {
@@ -436,7 +442,8 @@ a:hover {
       transform: translate3d(0, 0, 0); } }
   .header .language-dropdown {
     display: inline-block;
-    position: relative; }
+    position: relative;
+    z-index: 2; }
     .header .language-dropdown:hover .language-list {
       display: block; }
     @media (max-width: 1279px) {
@@ -975,12 +982,19 @@ body.hidden {
     margin: 0 auto; }
 
 .wrap-report {
-  position: relative; }
-  .wrap-report::after {
-    content: '';
-    background: url("../../src/img/report.png") no-repeat center right/cover; }
+  position: relative;
+  min-height: 440px;
+  background-image: url(../../src/img/report.png);
+  background-position: calc(100% + 100px) 20px;
+  background-size: auto;
+  background-repeat: no-repeat; }
+  .wrap-report .wrap {
+    display: flex;
+    position: static; }
   .wrap-report .heading::before {
     background-image: url("../svg/sprite.svg#report"); }
+  .wrap-report .report-block {
+    padding: 0 25% 0 0; }
 
 .report-tabs__caption li:not(.active):hover, .report-tabs__caption .active {
   color: #E60000;

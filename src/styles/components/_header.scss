@@ -82,6 +82,7 @@ body {
   .language-dropdown {
     display: inline-block;
     position: relative;
+    z-index: 2;
     &:hover {
       .language-list {
         display: block;

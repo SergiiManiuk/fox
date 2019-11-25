@@ -1,14 +1,25 @@
 .wrap-report {
-  position: relative;
-  &::after {
-  content: '';
-  background: url("../../src/img/report.png") no-repeat center right / cover; 
+    position: relative;
+    min-height: 440px;
+    background-image: url(../../src/img/report.png);
+    background-position: calc(100% + 100px) 20px;
+    background-size: auto;
+    background-repeat: no-repeat;
+
+  .wrap {
+    display: flex;
+    position: static;
   }
   .heading {
       &::before {
       background-image:  url("../svg/sprite.svg#report");
     }
   }
+  
+  .report-block {
+    padding: 0 25% 0 0;  
+  }
+
 }
 
 %tab-captopn-active {
