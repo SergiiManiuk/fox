@@ -15,6 +15,9 @@ $gray: #b9b9b9;
   align-items: center;
   color: $gray;
   font-size: 1.2em;
+  input {
+    display: none;
+  }
   .label {
     position: relative;
     display: inline-block;
@@ -62,9 +65,7 @@ input[type="radio"]:checked + .label {
   width: 100%;
   text-align: center;
 }
-.hidden {
-  display: none;
-}
+ 
   
   
 .credit {

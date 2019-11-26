@@ -1311,6 +1311,8 @@ footer {
   align-items: center;
   color: #b9b9b9;
   font-size: 1.2em; }
+  .radio input {
+    display: none; }
   .radio .label {
     position: relative;
     display: inline-block;
@@ -1349,9 +1351,6 @@ input[type="radio"]:checked + .label {
   left: 0;
   width: 100%;
   text-align: center; }
-
-.hidden {
-  display: none; }
 
 .credit {
   position: fixed;
