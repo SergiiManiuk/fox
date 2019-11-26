@@ -1373,12 +1373,20 @@ input[type="radio"]:checked + .label {
   width: 100%;
   text-align: center; }
 
+/* calculate REM */
+/* calculate EM */
+/* Background for fill of SVG Base64*/
+/* Responsive text */
 .article {
   display: grid;
-  grid-template-columns: minmax(280px, 315px) 1fr;
-  grid-gap: 3em;
+  grid-gap: 1em;
   border-bottom: 1px solid #D8D8D8;
-  padding: 1.8em 0; }
+  padding: 1.8em 0;
+  grid-template-columns: 1fr; }
+  @media (min-width: 1200px) {
+    .article {
+      grid-template-columns: minmax(280px, 315px) 1fr;
+      grid-gap: 3em; } }
   .article img {
     max-width: 100%; }
   .article__date {
@@ -1394,6 +1402,8 @@ input[type="radio"]:checked + .label {
     margin: 0 0 1.5em;
     line-height: 1.4;
     color: #8F8F8F; }
+  .article:last-child {
+    margin-bottom: 1.8em; }
 
 .wrap-report {
   margin: 2em 0 0 0;
@@ -1481,6 +1491,40 @@ input[type="radio"]:checked + .label {
       top: 50%;
       transform: translateY(-50%);
       line-height: 1; }
+
+.paginations {
+  display: flex; }
+  .paginations__btn a {
+    border: 1px solid #E1E8EE;
+    border-radius: 40px;
+    background: #fff;
+    color: #E60000;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6em 2em;
+    display: inline-block; }
+  .paginations__pages {
+    padding: 0 1em; }
+    .paginations__pages ul {
+      display: flex; }
+    .paginations__pages li a {
+      border-right: 1px solid #E1E8EE;
+      border-top: 1px solid #E1E8EE;
+      border-bottom: 1px solid #E1E8EE;
+      background: #fff;
+      color: #43474D;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.6em 1em;
+      display: inline-block;
+      transition: 0.35s; }
+    .paginations__pages li:first-child a {
+      border-radius: 4px 0 0 4px;
+      border-left: 1px solid #E1E8EE; }
+    .paginations__pages li:last-child a {
+      border-radius: 0 4px 4px 0; }
+    .paginations__pages li.active a, .paginations__pages li:hover a {
+      background: #E1E8EE; }
 
 .wrap-seo-bottom {
   padding: 3em 0.5em; }

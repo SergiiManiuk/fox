@@ -1,9 +1,17 @@
+@import '../base/vars';
+@import '../base/media';
+@import '../base/mixins';
+
 .article {
   display: grid;
-  grid-template-columns: minmax(280px, 315px) 1fr;
-  grid-gap: 3em;
+  grid-gap: 1em;
   border-bottom: 1px solid #D8D8D8;
   padding: 1.8em 0;
+  grid-template-columns: 1fr;
+  @include _1200_min {
+    grid-template-columns: minmax(280px, 315px) 1fr;
+    grid-gap: 3em;
+  }
   img {
     max-width: 100%;
   }
@@ -22,5 +30,8 @@
     margin: 0 0 1.5em;
     line-height: 1.4;
     color: #8F8F8F;
+  }
+  &:last-child {
+    margin-bottom: 1.8em;
   }
 }
