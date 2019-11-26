@@ -314,6 +314,7 @@ body {
       text-align: left;
       display: none;
       background: #3f3f3f;
+      padding: 0;
       @include header_breakpoint(max) {
         position: relative;
         width: auto;

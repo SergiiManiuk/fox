@@ -8,7 +8,7 @@ body {
   }
 }
 
-main {
+body {
   @include header_breakpoint(max) {
     padding: 50px 0 0 0;
   }

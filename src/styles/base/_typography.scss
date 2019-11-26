@@ -15,11 +15,15 @@ $max_font: 52px;
   align-items: center;
   color: #3F3F3F;
   text-align: center;
-  @include fluid-type(300px, 1920px, 25px, 52px);
+  @include fluid-type(300px, 1920px, 25px, 50px);
   margin: 0 0 0.3em 0;
+  span {
+    letter-spacing: 0.02em;
+    line-height: 0.8;
+  }
   span:first-child {
     font-weight: 600;
-    margin: 0 0.25em 0 0.25em;
+    margin: 0 0.25em 0 0.5em;
     font-size: 0.95em;
   }
   @include _560_min {
@@ -38,6 +42,12 @@ $max_font: 52px;
       margin: 0.5em auto 0.1em;
       transform: scale(1.4);
       display: block;
+    }
+  }
+  &.tender {
+    &::before {
+      background-image: url(../svg/sprite.svg#tender);
+      transform: scale(0.9);
     }
   }
 }
@@ -88,18 +98,19 @@ p {
   color: #656B6F;
   line-height: 1.5;
   margin: 0 0 1.5rem 0;
-  font-size: 0.95rem;
+  // font-size: 0.95rem;
 }
 
 a {
   &.link-more {
-    font-size: 1.125em;
+    // font-size: 1.125em;
     color: #000;
     text-decoration: none;
           span {
-    transition: 0.06s;
-          text-decoration: none;
-          border-bottom: 1px solid #000;
+transition: 0.06s;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    font-size: 1.1rem;
           }
     &::after {
       content: '>';

@@ -32,54 +32,68 @@
   }
 }
 
-.wrap-brand-slider-outer {
-  max-width: 1390px;
-}
-
 .wrap-brand-slider {
   background: #FFFFFF;
   border-radius: 4px;
   margin: 0;
+  padding: 1.6em 1em;
   .heading {
     &::before {
       background-image:  url("../svg/sprite.svg#logo_brand");
+      width: 1.2em;
+      height: 1.3em;
     }
   }
-  @include _740_min {
+  @include _769_min {
     border: 2px solid #EAEAEA;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
-    padding: 1.1em 1.4em;
+    padding: 1.5em 2em 0.5em;
   }
-  @include _1500_min {
-    padding: 1.6em 2.4em;
+  @include _1200_min {
+    padding: 2.5em 3em 1em;
   }
+
+    
+
 }
 
 
 
 .slider-brand {
-  padding: 0.2em 3.6em;
+  padding: 0.2em 1em;
   .owl-stage-outer {
     z-index: 2;
   }
-    @include _740_min {
-     padding: 0.2em 1em;   
-    }
-    @include _1500_min {
-     padding: 0.2em 0;   
-    }
-  .owl-nav {
-    @include _740_min {
-      left: -2.9em;
-      right: -2.9em;
-    }
-    @include _1100_min {
-      left: -3.1em;
-      right: -3.1em;
-    }
-    @include _1500_min {
-      left: -4.3em;
-      right: -4.3em;
-    }
+  // @include _769_min {
+  //  padding: 0.2em 1em;   
+  // }
+  @include _1500_min {
+   padding: 0.2em 0;   
   }
+  .owl-nav {
+    button {
+      &.owl-prev, 
+      &.owl-next {
+        top: 30%;
+      }
+      &.owl-prev {
+        left: -1em;
+        @include _769_min {
+          left: -3.5em;   
+        }
+        @include _1200_min {
+          left: -4.5em;  
+        }
+      } 
+      &.owl-next {
+        right: -1em;
+        @include _769_min {
+          right: -3.5em;   
+        }
+        @include _1200_min {
+          right: -4.5em;  
+        } 
+      }
+    }
+  } 
 }

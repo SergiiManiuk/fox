@@ -16,8 +16,8 @@ $ipad_portrait_min: '769px';
 
 $ipad_portrait_max: '768px';
 
-$ipad_landscape: '1024px';
-
+$ipad_landscape: '1024px'; 
+ 
 $credit_block_breakpoint: "820px";
 
 $desktop_1100: '1100px';
@@ -119,8 +119,13 @@ $tablet_600_max: '600px';
    }
 }
 
-@mixin ipad_portrait_min {
+@mixin _769_min {
    @media (min-width: #{$ipad_portrait_min}) {
+       @content;
+   }
+}
+@mixin _769_max {
+   @media (max-width: #{$ipad_portrait_min}) {
        @content;
    }
 }
@@ -185,18 +190,18 @@ $desktop_1000: "1000px";
 }
 
 $tablet_s_740: "740px";
-@mixin tablet_s_740_max {
-   @media (max-width: #{$tablet_s_740}) {
+@mixin _740_min {
+   @media (min-width: #{$tablet_s_740}) {
       @content;
    }
 }
 
-$tablet_700_max: "700px";
-@mixin tablet_700_max {
-   @media (max-width: #{$tablet_s_740}) {
-      @content;
-   }
-}
+// $tablet_700_max: "700px";
+// @mixin tablet_700_max {
+//    @media (max-width: #{$tablet_s_740}) {
+//       @content;
+//    }
+// }
 
 $tablet_s_730: "730px";
 @mixin tablet_s_730_max {

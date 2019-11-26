@@ -6,9 +6,11 @@ footer {
   text-align: left;
 }
 .footer-block {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(4, 1fr);
   padding: 0 0 1em 0;
+  flex-wrap: wrap;
+      justify-content: space-between;
 }
 
 .footer-column {

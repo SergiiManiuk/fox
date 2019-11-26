@@ -49,7 +49,7 @@ $(document).ready(function($) {
         1100: {
           items: 4
         },
-        1500: {
+        1300: {
           items: 5
         }
       }
@@ -61,7 +61,7 @@ $(document).ready(function($) {
       responsiveClass:true,
       loop: true,
       items : 3,
-      margin: 30,
+      margin: 20,
       stagePadding: 4,
       nav: true,
       dots: false,
@@ -70,12 +70,12 @@ $(document).ready(function($) {
           items: 1
         },
         560: {
-          items: 1
+          items: 2
         },
         769: {
-          items: 1
+          items: 2
         },
-        1100: {
+        900: {
           items: 3
         },
         1500: {

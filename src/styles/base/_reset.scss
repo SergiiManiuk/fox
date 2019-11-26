@@ -1,12 +1,12 @@
 @import "_vars";
 html, body, div, span, applet, object, iframe,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, ul, li img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 fieldset, form, label, legend,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+menu, nav, output, ruby, ol, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -48,4 +48,8 @@ a:focus {
 a:active,
 a:hover {
   outline: 0;
+}
+
+ul, ol {
+  list-style: none;
 }

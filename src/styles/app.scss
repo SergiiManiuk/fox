@@ -7,6 +7,7 @@
 @import 'base/typography';
 
 @import 'components/header';
+@import 'components/breadcrumbs';
 @import 'components/layout.scss';
 @import 'components/body';
 @import 'components/footer';
@@ -15,7 +16,10 @@
 @import 'modules/carousel';
 @import 'modules/carousel_index_banner';
 @import 'modules/carousel_brand';
+@import 'modules/filter';
+@import 'modules/article';
 @import 'modules/report_tabs';
+@import 'modules/menu_sidebar';
 @import 'modules/seo';
 
 

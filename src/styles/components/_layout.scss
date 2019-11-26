@@ -3,14 +3,46 @@
 @import '../base/mixins';
 
 .wrap {
-  max-width: 1360px;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  padding: 0 2%;
-      @include _1500_min {
-  padding: 0 3%;
-      }
+  padding: 0 4%;
+  @include _1200_min {
+    padding: 0;
+  }
+  &.wrap-brand-slider-outer {
+    max-width: 1280px;
+    // padding: 0 4%;
+    @include _1500_min {
+      // padding: 0 2%;
+    }
+  }
 }
  
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2em;
+  margin: 1em 0 2em;
+  @include _740_min {
+    grid-template-columns: 260px 1fr;
+  }
+  .heading {
+    span {
+      &:first-child {
+        margin-left: 0.2em;
+      }
+    }
+    &::before {
+      margin-top: -0.2em;
+      margin-left: 0;
+    }
+  }
+}
 
+.sidebar {  
+  @include _740_max {
+    display: none;
+  }
+}
