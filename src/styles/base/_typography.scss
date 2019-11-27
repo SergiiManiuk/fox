@@ -14,40 +14,57 @@ $max_font: 52px;
 .heading {
   align-items: center;
   color: #3F3F3F;
-  text-align: center;
-  @include fluid-type(300px, 1920px, 25px, 50px);
+  @include fluid-type(300px, 1920px, 25px, 52px);
   margin: 0 0 0.3em 0;
+  line-height: 1.1;
   span {
     letter-spacing: 0.02em;
-    line-height: 0.8;
-  }
-  span:first-child {
-    font-weight: 600;
-    margin: 0 0.25em 0 0.5em;
-    font-size: 0.95em;
+    // line-height: 1.1;
+    &:first-child {
+      font-weight: 600;
+      margin: 0 0.25em 0 0.3em;
+      font-size: 0.95em;
+    }
+    &.no-bold {
+      font-weight: normal;
+    }
+    &.bold {
+      font-weight: 600;
+    }
   }
   @include _560_min {
     display: flex;
+    flex-wrap: wrap;
   }
   &::before {
     content: '';
-    width: 1.05em;
-    height: 1.05em;
-    background-size: contain;
-    margin: 0.1em 0 0 0.1em;
+    height: 1.1em;
+    width: 1.1em;
+    background-size: cover;
+    // margin: 0.1em 0 0 0.1em;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;  
+    // background-size: 100% 0;    
+    align-self: flex-start;
     @include _560_max {
       margin: 0.5em auto 0.1em;
       transform: scale(1.4);
       display: block;
     }
   }
-  &.tender {
+  &.icon-tender, &.icon-subscribe {
     &::before {
       background-image: url(../svg/sprite.svg#tender);
+    }
+  }
+  &.icon-tender {
+    &::before {
       transform: scale(0.9);
+    }
+  }
+  &.icon-contacts {
+    &::before {
+      background-image: url(../svg/sprite.svg#contacts);
     }
   }
 }
@@ -99,6 +116,17 @@ p {
   line-height: 1.5;
   margin: 0 0 1.5rem 0;
   // font-size: 0.95rem;
+  &.underline {
+    &::after {
+      content: '';
+      background: linear-gradient(90deg, #FF3737 0%, #E60000 100%);
+      border-radius: 4px;
+      width: 100px;
+      height: 4px;
+      display: block;
+      margin: 25px 0 0 0;
+    }
+  }
 }
 
 a {
@@ -127,3 +155,10 @@ transition: 0.06s;
     } 
   }
 }
+
+.bold {
+  font-weight: 600;
+} 
+.no-bold {
+  font-weight: 400;
+} 

@@ -1,0 +1,25 @@
+.subscribe {
+  background: #F9F9F9;
+  padding: 4em 0;
+}
+
+.wrap-subscribe {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  grid-gap: 5em;
+  .heading {
+    line-height: 0.9;
+    &::before {
+      background-size: contain;
+      height: 2.4em;
+      width: 2.4em;
+    }
+  }
+  &__slogan {
+
+  }
+  &__submit {
+    justify-self: flex-end;
+  }
+}

@@ -31,13 +31,13 @@
   .heading {
     span {
       &:first-child {
-        margin-left: 0.2em;
+        margin-left: 0.1em;
       }
     }
-    &::before {
-      margin-top: -0.2em;
-      margin-left: 0;
-    }
+    // &::before {
+    //   margin-top: -0.2em;
+    //   margin-left: 0;
+    // }
   }
 }
 
