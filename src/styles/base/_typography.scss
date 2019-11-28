@@ -14,7 +14,7 @@ $max_font: 52px;
 .heading {
   align-items: center;
   color: #3F3F3F;
-  @include fluid-type(300px, 1920px, 25px, 52px);
+  @include fluid-type(300px, 1920px, 22px, 52px);
   margin: 0 0 0.3em 0;
   line-height: 1.1;
   span {
@@ -24,6 +24,9 @@ $max_font: 52px;
       font-weight: 600;
       margin: 0 0.25em 0 0.3em;
       font-size: 0.95em;
+      @include _560_max {
+        margin-left: 0;
+      }
     }
     &.no-bold {
       font-weight: normal;
@@ -41,13 +44,11 @@ $max_font: 52px;
     height: 1.1em;
     width: 1.1em;
     background-size: cover;
-    // margin: 0.1em 0 0 0.1em;
     background-repeat: no-repeat;
-    background-position: center;
-    // background-size: 100% 0;    
+    background-position: center;   
     align-self: flex-start;
     @include _560_max {
-      margin: 0.5em auto 0.1em;
+      margin: 0.5em auto 0.3em 0.2em;
       transform: scale(1.4);
       display: block;
     }
@@ -74,14 +75,19 @@ $max_font: 52px;
   box-shadow: 0px 6px 18px rgba(230, 0, 0, 0.5);
   border-radius: 40px;
   display: inline-block;
-  padding: 1.6em 3em;
+  padding: 1em 2em;
   font-family: PT Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  line-height: 10px;
+  @include fluid-type(350px, 1920px, 16px, 16px);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
   color: #fff;
   text-decoration: none;
+  @include _1100_min {
+    padding: 1.6em 3em;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

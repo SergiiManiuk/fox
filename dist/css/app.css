@@ -347,10 +347,10 @@ ul, ol {
   margin: 0 0 0.3em 0;
   line-height: 1.1; }
   .heading {
-    font-size: 25px; }
+    font-size: 22px; }
     @media screen and (min-width: 300px) {
       .heading {
-        font-size: calc(25px + 27 * ((100vw - 300px) / 1620)); } }
+        font-size: calc(22px + 30 * ((100vw - 300px) / 1620)); } }
     @media screen and (min-width: 1920px) {
       .heading {
         font-size: 52px; } }
@@ -360,6 +360,9 @@ ul, ol {
       font-weight: 600;
       margin: 0 0.25em 0 0.3em;
       font-size: 0.95em; }
+      @media (max-width: 560px) {
+        .heading span:first-child {
+          margin-left: 0; } }
     .heading span.no-bold {
       font-weight: normal; }
     .heading span.bold {
@@ -378,7 +381,7 @@ ul, ol {
     align-self: flex-start; }
     @media (max-width: 560px) {
       .heading::before {
-        margin: 0.5em auto 0.1em;
+        margin: 0.5em auto 0.3em 0.2em;
         transform: scale(1.4);
         display: block; } }
   .heading.icon-tender::before, .heading.icon-subscribe::before {
@@ -393,14 +396,26 @@ ul, ol {
   box-shadow: 0px 6px 18px rgba(230, 0, 0, 0.5);
   border-radius: 40px;
   display: inline-block;
-  padding: 1.6em 3em;
+  padding: 1em 2em;
   font-family: PT Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  line-height: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
   color: #fff;
   text-decoration: none; }
+  .btn {
+    font-size: 16px; }
+    @media screen and (min-width: 350px) {
+      .btn {
+        font-size: calc(16px + 0 * ((100vw - 350px) / 1570)); } }
+    @media screen and (min-width: 1920px) {
+      .btn {
+        font-size: 16px; } }
+  @media (min-width: 1100px) {
+    .btn {
+      padding: 1.6em 3em; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -1272,6 +1287,10 @@ footer {
     background-image: url("../svg/sprite.svg#logo_brand");
     width: 1.2em;
     height: 1.3em; }
+    @media (max-width: 560px) {
+      .wrap-brand-slider .heading::before {
+        margin-left: auto;
+        margin-right: auto; } }
   @media (min-width: 769px) {
     .wrap-brand-slider {
       border: 2px solid #EAEAEA;
@@ -1307,79 +1326,49 @@ footer {
       .slider-brand .owl-nav button.owl-next {
         right: -4.5em; } }
 
-.content-filter {
+/* calculate REM */
+/* calculate EM */
+/* Background for fill of SVG Base64*/
+/* Responsive text */
+.categories {
   display: flex;
   border-bottom: 1px solid #D8D8D8;
   padding: 15px 0 10px 0; }
-
-.radio {
-  cursor: pointer;
-  font-size: 14px;
-  margin: 0 1.5em 0 0;
-  display: flex;
-  align-items: center;
-  color: #b9b9b9;
-  font-size: 1.2em; }
-  .radio input {
-    display: none; }
-  .radio .label {
-    position: relative;
-    display: inline-block;
-    margin-right: 5px;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #b9b9b9;
-    border-radius: 6px;
-    -webkit-tap-highlight-color: transparent; }
-    .radio .label:after {
+  .categories li a {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 1em 0 0;
+    display: flex;
+    align-items: center;
+    color: #b9b9b9;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 0 0 0 24px;
+    -webkit-tap-highlight-color: transparent;
+    position: relative; }
+    .categories li a::before, .categories li a::after {
       content: '';
       position: absolute;
-      top: 3px;
-      left: 3px;
+      left: 0;
+      display: inline-block;
+      height: 20px;
+      width: 20px; }
+    .categories li a::before {
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #b9b9b9;
+      border-radius: 6px; }
+    .categories li a::after {
+      background: #E60000;
+      border-radius: 50%;
       width: 10px;
       height: 10px;
-      border-radius: 100%;
-      background: #E60000;
-      transform: scale(0);
-      transition: all .2s ease;
-      opacity: .08;
-      pointer-events: none; }
-  .radio:hover .label:after {
-    transform: scale(3.6); }
-
-input[type="radio"]:checked + .label {
-  border-color: #E60000; }
-  input[type="radio"]:checked + .label:after {
-    transform: scale(1);
-    transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
-    opacity: 1; }
-
-.cntr {
-  position: absolute;
-  top: calc(50% - 10px);
-  left: 0;
-  width: 100%;
-  text-align: center; }
-
-.credit {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  transition: all .2s ease;
-  -webkit-user-select: none;
-  user-select: none;
-  opacity: .6; }
-  .credit img {
-    width: 72px; }
-  .credit:hover {
-    transform: scale(0.95); }
-
-.cntr {
-  position: absolute;
-  top: calc(50% - 10px);
-  left: 0;
-  width: 100%;
-  text-align: center; }
+      left: 5px;
+      opacity: 0;
+      transition: 0.1s; }
+    .categories li a.check::after {
+      opacity: 1; }
 
 /* calculate REM */
 /* calculate EM */
@@ -1535,21 +1524,41 @@ input[type="radio"]:checked + .label {
 
 .subscribe {
   background: #F9F9F9;
-  padding: 4em 0; }
+  padding: 2em 0 3em; }
+  @media (min-width: 1100px) {
+    .subscribe {
+      padding: 4em 0; } }
 
 .wrap-subscribe {
   display: grid;
-  grid-template-columns: 1fr auto;
   align-items: center;
-  grid-gap: 5em; }
+  grid-gap: 2em; }
+  @media (min-width: 1100px) {
+    .wrap-subscribe {
+      grid-template-columns: 1fr auto;
+      grid-gap: 5em; } }
   .wrap-subscribe .heading {
-    line-height: 0.9; }
+    flex-wrap: nowrap; }
     .wrap-subscribe .heading::before {
       background-size: contain;
-      height: 2.4em;
-      width: 2.4em; }
-  .wrap-subscribe__submit {
-    justify-self: flex-end; }
+      height: 2.21em;
+      width: 2.21em; }
+      @media (max-width: 1100px) {
+        .wrap-subscribe .heading::before {
+          margin-left: auto; } }
+    @media (max-width: 1100px) {
+      .wrap-subscribe .heading {
+        text-align: center; } }
+  @media (min-width: 769px) {
+    .wrap-subscribe__submit {
+      justify-self: center; } }
+  @media (min-width: 1100px) {
+    .wrap-subscribe__submit {
+      justify-self: flex-end; } }
+  @media (max-width: 769px) {
+    .wrap-subscribe__submit .btn {
+      display: block;
+      text-align: center; } }
 
 /* calculate REM */
 /* calculate EM */

@@ -42,6 +42,10 @@
       background-image:  url("../svg/sprite.svg#logo_brand");
       width: 1.2em;
       height: 1.3em;
+      @include _560_max {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
   @include _769_min {
