@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    order = require("gulp-order");
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
@@ -11,7 +12,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpif = require('gulp-if');
 var argv = require('yargs').argv;
 var del = require("del");
-var  svgSprite = require('gulp-svg-sprite');
+var svgSprite = require('gulp-svg-sprite');
 
 function browserTask() {
   browserSync({
@@ -36,12 +37,11 @@ exports.bsReload = bsReload;
         .pipe(gulpif(!argv.prod,sourcemaps.init({loadMaps: true})))
         .pipe(sass())
         .pipe(gulpif(argv.prod,autoprefixer({cascade: false})))
-        .pipe(gulpif(argv.prod,rename({suffix: '.min'})))
         .pipe(gulpif(argv.prod,cleanCSS()))
         .pipe(gulp.dest('dist/css/'))
         .pipe(gulpif(!argv.prod,sourcemaps.write('.')))
         .pipe(gulp.dest('dist/css/'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync.reload({stream:true}))  
 }
 exports.styles = styles;
 
@@ -58,21 +58,16 @@ exports.clean = clean;
 
 
 function scripts() {
-   return gulp.src('src/js/app.js')
+   return gulp.src(['src/js/partials/*.js', 'src/js/*.js'])
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
         this.emit('end');
     }}))
-    // .pipe(jshint())
-    // .pipe(jshint.reporter('default'))  
-     // .pipe(babel({
-     //     presets: ['env']
-     // }))
     .pipe(concat('app.js'))
-    .pipe(gulpif(argv.production, gulp.dest('./dist/js/'))) //prod
+    .pipe(gulp.dest('./dist/js/'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulpif(argv.production, (uglify())))  //prod
+    .pipe(gulpif(argv.prod, (uglify())))  //prod
     .pipe(gulp.dest('./dist/js/'))
     .pipe(browserSync.reload({stream:true})) 
 }
@@ -85,11 +80,6 @@ exports.clean = clean;
 
 var config = {
     mode: {
-      css: { // Activate the «css» mode
-        render: {
-          css: false // Activate CSS output (with default options)
-        }
-      },
       stack : {
         sprite: "../sprite.svg"
       }

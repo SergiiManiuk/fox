@@ -3,6 +3,7 @@
 @import '../base/mixins';
 
 .paginations {
+  margin-top: 1.8em;
   ul, & {
     align-items: center;
     display: flex;
