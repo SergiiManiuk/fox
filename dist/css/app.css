@@ -816,8 +816,7 @@ a.link-more {
       display: block;
       text-decoration: none;
       color: #fff;
-      font-size: 1rem;
-      transition: all .3s ease-out; }
+      font-size: 1rem; }
       @media (min-width: 1280px) {
         .stellarnav .nav-main li a {
           height: 100%;
@@ -1429,7 +1428,7 @@ footer {
 
 .slider-default .owl-stage {
   display: flex;
-  align-items: center; }
+  align-items: flex-start; }
 
 .slider-default .owl-item img {
   max-width: 100%;
@@ -1437,7 +1436,6 @@ footer {
   margin: 0 auto; }
 
 .slider-default .owl-item .slider-default__item img {
-  width: 100%;
   border-radius: 6px 6px 0 0; }
 
 .slider-default__image {

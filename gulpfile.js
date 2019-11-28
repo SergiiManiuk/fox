@@ -100,7 +100,7 @@ exports.svg = svg;
 
 function watchFiles() {
   gulp.watch("src/styles/**/*.scss", styles);
-  gulp.watch("src/js/app.js", scripts);
+  gulp.watch("src/js/**/*.js", scripts);
   gulp.watch("./*.html", html);
 }
 
