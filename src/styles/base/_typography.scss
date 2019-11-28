@@ -53,7 +53,7 @@ $max_font: 52px;
       display: block;
     }
   }
-  &.icon-tender, &.tender &.icon-subscribe {
+  &.icon-tender, &.tender, &.icon-subscribe {
     &::before {
       background-image: url(../svg/sprite.svg#tender);
     }

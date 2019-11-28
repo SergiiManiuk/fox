@@ -385,7 +385,7 @@ ul, ol {
         margin: 0.5em auto 0.3em 0.2em;
         transform: scale(1.4);
         display: block; } }
-  .heading.icon-tender::before, .heading.tender .heading.icon-subscribe::before {
+  .heading.icon-tender::before, .heading.tender::before, .heading.icon-subscribe::before {
     background-image: url(../svg/sprite.svg#tender); }
   .heading.icon-tender::before, .heading.tender::before {
     transform: scale(0.9); }
