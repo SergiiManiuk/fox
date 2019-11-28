@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    margin: 0 0 1em 0;
     @include _769_max {
       margin: 0 0 3em 0;
     }
