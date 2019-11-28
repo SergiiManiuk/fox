@@ -1816,7 +1816,7 @@ footer {
 
 .subscribe {
   background: #F9F9F9;
-  background: url("../../src/img/bg-wave-subscribe-png.svg") center right/contain no-repeat #F9F9F9;
+  background: url("../../src/img/bg-wave-subscribe.svg") center right/contain no-repeat #F9F9F9;
   box-shadow: 0px 1px 0px #EAEAEA, 0px -1px 0px #EAEAEA;
   padding: 2em 0 3em; }
   @media (min-width: 1100px) {
