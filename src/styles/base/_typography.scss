@@ -53,12 +53,12 @@ $max_font: 52px;
       display: block;
     }
   }
-  &.icon-tender, &.icon-subscribe {
+  &.icon-tender, &.tender &.icon-subscribe {
     &::before {
       background-image: url(../svg/sprite.svg#tender);
     }
   }
-  &.icon-tender {
+  &.icon-tender, &.tender {
     &::before {
       transform: scale(0.9);
     }
