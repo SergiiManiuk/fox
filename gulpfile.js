@@ -66,6 +66,7 @@ function scripts() {
     }}))
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./dist/js/'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulpif(argv.prod, (uglify())))  //prod
     .pipe(gulp.dest('./dist/js/'))
     .pipe(browserSync.reload({stream:true})) 
