@@ -8,14 +8,19 @@
   margin-right: auto;
   position: relative;
   padding: 0 4%;
-  @include _1200_min {
-    padding: 0;
-  }
   &.wrap-brand-slider-outer {
     max-width: 1280px;
-    // padding: 0 4%;
     @include _1500_min {
-      // padding: 0 2%;
+      padding: 0 2%;
+    }
+  }
+}
+
+.wrap-news {
+  .wrap {
+    @include _1200_min {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

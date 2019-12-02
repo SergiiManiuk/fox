@@ -68,9 +68,9 @@
   .owl-stage-outer {
     z-index: 2;
   }
-  // @include _769_min {
-  //  padding: 0.2em 1em;   
-  // }
+  @include _769_min {
+   padding: 0.2em 1em;   
+  }
   @include _1500_min {
    padding: 0.2em 0;   
   }

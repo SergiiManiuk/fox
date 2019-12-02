@@ -55,13 +55,15 @@ $(document).ready(function($) {
       }
     })
 
-    $('.slider-default').owlCarousel({
+    var slideDef = $('.slider-default'); 
+     slideDef.owlCarousel({
       margin: 0,
+      autoHeight:true,
       nav: true,
       responsiveClass:true,
       loop: true,
       items : 3,
-      margin: 20,
+      margin: 23,
       stagePadding: 4,
       nav: true,
       dots: false,
@@ -69,7 +71,7 @@ $(document).ready(function($) {
         0: {
           items: 1
         },
-        560: {
+        740: {
           items: 2
         },
         769: {
