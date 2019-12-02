@@ -154,12 +154,17 @@
   }
 }
 .slider-default-image-full {
+  .owl-stage-outer {
+    display: flex;
+  }
   .owl-stage {
     align-items: flex-start;
+    height: 100%;
   }
   .owl-item {
     display: flex;
     flex: 1 0 auto;
+    height: 100%;
     img {
       max-width: 100%;
       width: auto;

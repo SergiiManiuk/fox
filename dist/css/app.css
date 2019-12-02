@@ -1476,12 +1476,17 @@ footer {
 .slider-default__description {
   flex-grow: 1; }
 
+.slider-default-image-full .owl-stage-outer {
+  display: flex; }
+
 .slider-default-image-full .owl-stage {
-  align-items: flex-start; }
+  align-items: flex-start;
+  height: 100%; }
 
 .slider-default-image-full .owl-item {
   display: flex;
-  flex: 1 0 auto; }
+  flex: 1 0 auto;
+  height: 100%; }
   .slider-default-image-full .owl-item img {
     max-width: 100%;
     width: auto;
