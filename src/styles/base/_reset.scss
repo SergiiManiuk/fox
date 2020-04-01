@@ -1,5 +1,5 @@
 @import "_vars";
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=latin-ext');
+// @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=latin-ext');
 html, body, div, span, applet, object, iframe,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, ul, li img, ins, kbd, q, s, samp,
@@ -14,7 +14,7 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  font-family: $font-default;
+  font-family: foxtrot,sans-serif,serif;
 }
 
 :focus {
@@ -53,4 +53,8 @@ a:hover {
 
 ul, ol {
   list-style: none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }

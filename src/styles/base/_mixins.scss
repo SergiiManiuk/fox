@@ -5,6 +5,8 @@
   &:-ms-input-placeholder      {@content}  
 }
 
+
+
  /* calculate REM */
 @function calculateRem($size) {
   $remSize: $size / 16px;
